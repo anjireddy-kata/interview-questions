@@ -22,12 +22,12 @@ Ans: Template reference variables used to access the HTML elements on the compon
 
 ### Q6: What are all the different ways angular provides facilitate the communication between the two below mentioned scenarios? Please write pseudo code?
 
-•	### Parent to child
+### Parent to child
 @Input is used to send the information from Parent component to child component.
 
-•	### Child to Parent
+### Child to Parent
 @Output is used to send the information from Child component to parent component in the form of events. i.e. Parent component has to define the event when defining the child component in html.
 
-•	#### Independent components
+#### Independent components
 This can be done using Service using Subject.
 
