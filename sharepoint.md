@@ -123,5 +123,55 @@ Your organization has lots of content (I am talking about hundreds of GB). You c
 ### Q5: What is a list in SharePoint?
 A SharePoint list is a container for information, similar to a very simple database or spreadsheet. Using a list is the most common way to manage information in a SharePoint site.
 https://sharepointmaven.com/create-custom-list-sharepoint/
+https://www.linkedin.com/pulse/what-sharepoint-framework-spfx-mark-kashman/
 
-### Q6: 
+### Q6: What is SharePoint Framework?
+The SharePoint Framework (SPFx) is a page and web part model that provides full support for client-side SharePoint development, easy integration with SharePoint data, and support for open source tooling. With the SharePoint Framework, you can use modern web technologies and tools in your preferred development environment to build productive experiences and apps that are responsive and mobile-ready from day one. The SharePoint Framework works for SharePoint Online and also for on-premises (SharePoint 2016 Feature Pack 2 and SharePoint 2019).
+
+Key features of the SharePoint Framework include the following:
+It runs in the context of the current user and connection in the browser. There are no iFrames for the customization (JavaScript is embedded directly to the page).
+The controls are rendered in the normal page DOM.
+The controls are responsive and accessible by nature.
+It enables the developer to access the lifecycle in addition to render, load, serialize and deserialize, configuration changes, and more.
+It is framework-agnostic. You can use any JavaScript framework that you like: React, Handlebars, Knockout, Angular, and more.
+The toolchain is based on common open source client development tools such as npm, TypeScript, Yeoman, webpack, and gulp.
+Performance is reliable.
+End users can use SPFx client-side solutions that are approved by the tenant administrators (or their delegates) on all sites, including self-service team, group, or personal sites.
+SPFx web parts can be added to both classic and modern pages.
+
+### Q7: Why the SharePoint Framework?
+That architecture worked well in environments with only one enterprise, but it didn’t scale to the cloud, where multiple tenants run side-by-side. As a result, we introduced two alternative models: client-side JavaScript injection, and SharePoint Add-ins. Both of these solutions have pros and cons.
+
+JavaScript injection
+One of the most popular web parts in SharePoint Online is the Script Editor. You can paste JavaScript into the Script Editor web part and have that JavaScript execute when the page renders. It’s simple and rudimentary, but effective. It runs in the same browser context as the page, and is in the same DOM, so it can interact with other controls on the page. It is also relatively performant, and simple to use.
+
+There are a few downsides to this approach, however. First, while you can package your solution so that end users can drop the control onto the page, you can't easily provide configuration options. Also, the end user can edit the page and modify the script, which can break the web part. Another big problem is that the Script Editor web part is not marked as "Safe For Scripting". Most self-service site collections (my-sites, team sites, group sites) have a feature known as "NoScript" enabled. Technically, it is the removal of the Add/Customize Pages (ACP) permission in SharePoint. This means that the Script Editor web part will be blocked from executing on these sites.
+
+SharePoint Add-in model
+The current option for solutions that run in NoScript sites is the add-in/app-part model. This implementation creates an iFrame where the actual experience resides and executes. The advantage is that because it's external to the system and has no access to the current DOM/connection, it's easier for information workers to trust and deploy. End users can install add-ins on NoScript sites.
+
+There are some downsides to this approach as well. First, they run in an iFrame. iFrames are slower than the Script Editor web part, because it requires a new request to another page. The page has to go through authentication and authorization, make its own calls to get SharePoint data, load various JavaScript libraries, and more. A Script Editor web part might typically take, for example, 100 milliseconds to load and render, while an app part might take 2 seconds or more. Additionally, the iFrame boundary makes it more difficult to create responsive designs and inherit CSS and theming information. iFrames do have stronger security, which can be useful for you (your page is inaccessible by other controls on the page) and for the end user (the control has no access to their connection to Office 365).
+
+### Q7: Script Editor Web parts vs App Parts vs SPFx Web parts
+
+**SPFx Webparts**
+
+Client-side web parts
+Leverages modern JavaScript frameworks
+Can be used on classic SharePoint pages
+Provides modern experience
+Responsiveness and out of the box
+Free, open source tool 
+
+**Script Editor Web Parts**
+
+Choice of developers for customizing DOM on classic SharePoint sites
+Script can be easily edited by any user
+Cannot be added to “NoScript” sites
+
+**App Parts**
+
+Developed using Add-on model
+Uses iFrame
+Cannot access DOM of SharePoint page
+Development and deployment is a bit complicated
