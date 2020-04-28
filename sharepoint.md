@@ -43,3 +43,85 @@ As a SharePoint Developer, you’ll be responsible for creating and customizing 
 **Visio:** This program is useful for drafting and collaborating on workflows before exporting them to SharePoint Designer.
 **PowerShell:** This tool allows you to run and automate scripts in SharePoint.
 **Visual Studio:** Visual Studio provides project templates for SharePoint sites and helps bring complex site requirements to life.
+
+### Q1. How do we decide whether we need go for SharePoint or not?
+Ans:
+When it comes to choosing between SharePoint and another web-based platform, it becomes a tough call to decide to choose SharePoint. Let me simplify the choice.
+
+Every organization has its own reason to choose SharePoint. Here I am describing if I have to make a choice then why I will choose SharePoint.
+
+Due to following reasons, I will choose SharePoint because:
+
+SharePoint has better Document Management facilities.
+It has better user and rights management
+Opens a full scope to customize the application
+Provides the best way to collaborate with your team using team sites, tasks management, issue tracking, announcements etc.
+Fastest search service
+Versioning of the documents and content approvals
+Its default workflows
+Control over contents
+
+### Q2: Sharepoint types 
+1. SharePoint foundation
+2. SharePoint Server
+3. Office 365 (SharePoint online)
+
+The first two options are SharePoint on-premise, while Office 365 has emerged as a third, fully cloud-hosted model for SharePoint.
+
+### SharePoint Server
+SharePoint Server offers a wealth of features that extend upon those offered in SharePoint Foundation. It provide a richer, more advanced collection of features that you can utilize in your organization’s solutions.
+
+##### Key Features of SharePoint Server
+Some of these additional features are described in the following list −
+
+**Advanced Search** − The search features and functionality features available within the Server versions offer more flexibility. They allow customized Search Results pages that you can configure with customized search Web Parts.
+
+**Web Content Management** − SharePoint Server supports web content creation and publishing for the internet.
+
+**Enterprise Services** − These services provide ways for you to build custom solutions quickly and easily using tools that are available to you within the Office product family.
+
+**Business Connectivity Services** − Business Connectivity Services (BCS) enables you to connect to these external data sources and display business data via Web Parts, user profiles, or SharePoint lists.
+
+**Social Networking and Computing** − Social networking is everywhere and has become an expected feature set of many solutions.
+
+**Records management** − SharePoint Server provides excellent support for the management of content throughout its entire life cycle.
+
+### Office 365
+Office 365 has emerged as a third, fully cloud-hosted model for SharePoint. It is the alternate option to hosting your own farm in your own on-premises Data Center.
+
+##### Key Features of Office 365
+The options for licensing SharePoint Online through Office 365 are based on factors such as the number of users you want to add, the amount of data you need to store, and the features you need to be available.
+
+It has also become a great place where you can develop rich applications (both as SharePoint-hosted and cloud-hosted apps) and scale without the cost of managing the on-premises infrastructure.
+
+It does not have all the same services and features as SharePoint Server, but does carry with it some great development capabilities.
+
+There are .NET applications that you build using C# or Visual Basic and then deploy into SharePoint as .WSPs or .APPs. There are lighter-weight apps such as HTML5 and JavaScript apps that you can also deploy.
+
+As a developer, you have the capability to customize any of the SharePoint editions, whether it is SharePoint Foundation, Server, or Office 365.
+
+### Q1: What is share point site collection and site?
+
+SharePoint Site Collection, is a collection of SharePoint Sites. Each site collection contains a single top-level site and subsites below it.
+
+SharePoint Site is a website that contains different SharePoint Web Parts like Document Library, Calendar, Task List, etc. SharePoint sites can have 1 or more pages to display content to the user.
+
+### Q2: WHEN TO CREATE A SITE IN SHAREPOINT?
+You are looking to create a site that needs to rely on same metadata, security or navigation as the existing sites you already have.
+You are a small organization. Unless you want to administer SharePoint on a full-time basis, just stay with 1 site collection.
+You created a template site (i.e. Project site template or department site template) and want your new site to resemble same look and feel as the rest of the sites. Site templates can only be replicated across same site collection
+You only plan to have a handful of SharePoint sites in your organization. If you plan to roll out hundreds and hundreds of sites, you might take a look at reasons below.
+
+### Q3: WHEN TO CREATE A SITE COLLECTION IN SHAREPOINT?
+You are a large organization with multiple business units and each business unit has independent and separate business functions.
+You are a large organization and each of your departments has a large number of people and each department is expected to create lots and lots of sites that do not to rely on global metadata or security groups.
+You are a large organization and want to separate your SharePoint administrative functions (have separate SharePoint administrators for each site collection)
+Your organization has lots of content (I am talking about hundreds of GB). You can allocate both server resources and storage per site collection. So if you say have a number of sites that are running server-intensive workflows or you have lots of content, you can allocate separate site collections and assign those accordingly.
+
+### Q4: What is the difference between the Site and Page?
+
+### Q5: What is a list in SharePoint?
+A SharePoint list is a container for information, similar to a very simple database or spreadsheet. Using a list is the most common way to manage information in a SharePoint site.
+https://sharepointmaven.com/create-custom-list-sharepoint/
+
+### Q6: 
