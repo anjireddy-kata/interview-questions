@@ -281,7 +281,26 @@ Ans:
 Ans:
 Managed callable wrappers are a JNI bridge which are used any time managed code needs to invoke Android code and provide support for overriding virtual methods and implementing Java interfaces. The entire Android.* and related namespaces are managed callable wrappers generated via .jar binding. Managed callable wrappers are responsible for converting between managed and Android types and invoking the underlying Android platform methods via JNI.
 
-### Q27: What is Xamarin Profiler?
+### Q27: Why AOT is used in Xamarin.IOS?
+Apple doesn't allow you to run the execution of dynamically generated code on a IOS device. Due to this security restriction, Xamarin.iOS instead uses an Ahead of Time (AOT) compiler to compile the managed code. This produces a native iOS binary, optionally optimized with LLVM for devices, that can be deployed on Apple’s ARM-based processor.
+
+### Q28: Limitations of Xamarin.IOS?
+Limited Generics Support
+No Dynamic Code Generation
+Runtime Disabled Features
+The following features have been disabled in Mono's iOS Runtime:
+
+Profiler
+Reflection.Emit
+Reflection.Emit.Save functionality
+COM bindings
+The JIT engine
+Metadata verifier (since there is no JIT)
+
+### Q29: What is linking process in Xamarin?
+Linking is the process during compilation that allows the compiler to strip unused code from the referenced dlls in your project and also from your own classes.
+
+### Q30: What is Xamarin Profiler?
 Ans:
 Xamarin Profiler is a tool which is used by the developers to keep an eye on the information about the particular App inside the Visual Studio. With the help of Xamarin Profiler, developers can easily analyze the App's behavior. We can use the profiler to track the application's memory information and can sample its statistics.
 
