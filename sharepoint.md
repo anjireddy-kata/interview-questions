@@ -175,3 +175,59 @@ Developed using Add-on model
 Uses iFrame
 Cannot access DOM of SharePoint page
 Development and deployment is a bit complicated
+
+https://rencore.com/blog/use-new-sharepoint-framework/
+https://www.voitanos.io/pages/ec-spfxdev-day-3-of-10-how-the-sharepoint-framework-differs-from-traditional-development-and-deployment
+**SharePoint Framework customizations execute within the client. They are script-based, not compiled and thus they run in the context of the current page. This is also the only way to customize SharePoint’s modern pages in a supported way.**
+
+Customizations deployed for use with the SharePoint Framework are uploaded to the tenant’s app catalog site making the customizations available across any site within the tenant.
+
+### Q8: Share Point Framework vs Farm solutions vs sandboxed solution
+Ans:
+**Share Point Framework**
+1. Client side execution Model
+2. Rendered and executed in page context
+3. only way to customize the modern pages
+4. Open source cross platform tooling
+5. Support first an dthird party development
+6. Responsive, acceessible and mobile friendly
+7. Scoped to tenant or site
+8. Limited to created client side webparts and UI extensions
+
+**Farm Solutions**
+Server side execution model
+Full server side API
+Only supported in on-site environments
+Built with Visual studio on windows
+Scoped to farm
+Build webparts, timer jobs, event receivers, feature receivers, etc
+
+**Sandbox Solutions**
+Server-side execution model
+Declarative solutions only availble in shareoint online
+Built with visual studio in windows
+Scoped to site collection
+Build features and declarative solutions
+
+**Sharepoint Addon**
+Client side or server side execution
+client-side API
+Execution context externalized from share point
+Build with Visual studio on windows
+scoped to tenent and site
+Build web parts, remote event receivers and work flows and more
+
+**JavaScript Injection**
+Client-sde injection model
+Client-side API
+Build/Implement with any build toolchain
+Scoped to SharePoint page
+Implemented manually; no automated deployment
+
+After solutions came SharePoint Add-ins, initially called apps. Man the reason why they were renamed from apps to add-ins is an interesting one, but that’s for another time.
+
+These are available in two flavors, the SharePoint Hosted Add-in and the Provider Hosted Add-in.
+
+For SharePoint Hosted Add-ins, they run exclusively within a client-side context. Any custom business logic has to be implemented using JavaScript as the files deployed to SharePoint while stored in SharePoint, are not run on the server. They are rendered in the client and run there.
+
+In the case of Provider Hosted Add-ins, these are more open-ended. The developer, or provider, of the add-in, deploys a web application external to SharePoint and thus, can use any web development techniques at their disposal.
