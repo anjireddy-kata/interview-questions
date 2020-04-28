@@ -216,7 +216,7 @@ Pinch  Gesture: Pinch Gesture occurs when the user places two fingers on the scr
 Pan Gesture: A pan gesture is used for detecting the movement of fingers around the screen. These movements are then applied to the content currently at the display. It is recognized with  the PanGestureRecognizer class
 Swipe Gesture: A swipe gesture occurs when a finger is moved across the mobile screen in a horizontal or vertical direction and is often used to initiate navigation through content. Swipe gestures are recognized with SwipeGestureRecognizer class.
 
-### Q8: What is Xamarin Profiler?
+### Q22: What is Xamarin Profiler?
 Ans:
 Xamarin Profiler is a tool which is used by the developers to keep an eye on the information about the particular App inside the Visual Studio. With the help of Xamarin Profiler, developers can easily analyze the App's behavior. We can use the profiler to track the application's memory information and can sample its statistics.
 
