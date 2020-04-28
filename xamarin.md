@@ -269,7 +269,19 @@ It decouples them without making any dependency among ViewModels, while EventHan
 MessagingCenter should be applied when the receiver doesn't care who sent the message and the sender doesn't care who will receive it. Events should be used when the receiver needs to know who sent the message, but the sender still doesn't care who handles it.
 It is good to use MessagingCenter over Events but, if you make too much use of too many Messages using MessagingCenter, it would be hard to identify who sent it and when sent it, the relation between messages would be hard to guess, thus making it hard time while debugging the app.
 
-### Q22: What is Xamarin Profiler?
+### Q24: How to improve performance of an ListView in Xamarin?
+https://docs.microsoft.com/en-us/xamarin/xamarin-forms/user-interface/listview/performance#improving-listview-performance
+
+### Q26: What is ACW (Android Callable Wrappers) and MCW (Managed Callable Wrappers)?
+Ans:
+ ##### ACW
+ Android callable wrappers are a JNI (Java Native Interfaces) bridge which are used any time the Android runtime needs to invoke managed code. Android callable wrappers are how virtual methods can be overridden and Java interfaces can be implemented.
+ 
+ ##### MCW
+Ans:
+Managed callable wrappers are a JNI bridge which are used any time managed code needs to invoke Android code and provide support for overriding virtual methods and implementing Java interfaces. The entire Android.* and related namespaces are managed callable wrappers generated via .jar binding. Managed callable wrappers are responsible for converting between managed and Android types and invoking the underlying Android platform methods via JNI.
+
+### Q27: What is Xamarin Profiler?
 Ans:
 Xamarin Profiler is a tool which is used by the developers to keep an eye on the information about the particular App inside the Visual Studio. With the help of Xamarin Profiler, developers can easily analyze the App's behavior. We can use the profiler to track the application's memory information and can sample its statistics.
 
