@@ -54,12 +54,12 @@ XAML has the parent-child hierarchy of user-interface objects with greater visua
 ### Q6: What are the different kinds of pages are present in the Xamarin.forms?
 The following are some of the different pages that are available in the Xamarin.forms:
 
-##### Content page – this type of the page displays a single view, often a container such as a stack layout or the scroll view.
-##### Master-Detail page – this type of page manages two types of panes of information.
-##### Navigation page – a page that manages the navigation and the user experiences as a stack of other pages
-##### Tabbed page – this page allows the navigation of the children pages using the tab.
-##### Templated page – a page that helps to display the full page content with a control template and the base class for the content page.
-##### Carousel page – a page allowing the swipe gestures between the subpages such as a gallery.
+**Content page** – this type of the page displays a single view, often a container such as a stack layout or the scroll view.
+**Master-Detail page** – this type of page manages two types of panes of information.
+**Navigation page** – a page that manages the navigation and the user experiences as a stack of other pages
+**Tabbed page** – this page allows the navigation of the children pages using the tab.
+**Templated page** – a page that helps to display the full page content with a control template and the base class for the content page.
+**Carousel page** – a page allowing the swipe gestures between the subpages such as a gallery.
 
 ### Q7: Whatis databinding and what are the different types of binding modes available in Xamarin?
 Ans:
