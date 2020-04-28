@@ -100,32 +100,32 @@ There are .NET applications that you build using C# or Visual Basic and then dep
 
 As a developer, you have the capability to customize any of the SharePoint editions, whether it is SharePoint Foundation, Server, or Office 365.
 
-### Q1: What is share point site collection and site?
+### Q3: What is share point site collection and site?
 
 SharePoint Site Collection, is a collection of SharePoint Sites. Each site collection contains a single top-level site and subsites below it.
 
 SharePoint Site is a website that contains different SharePoint Web Parts like Document Library, Calendar, Task List, etc. SharePoint sites can have 1 or more pages to display content to the user.
 
-### Q2: WHEN TO CREATE A SITE IN SHAREPOINT?
+### Q4: WHEN TO CREATE A SITE IN SHAREPOINT?
 You are looking to create a site that needs to rely on same metadata, security or navigation as the existing sites you already have.
 You are a small organization. Unless you want to administer SharePoint on a full-time basis, just stay with 1 site collection.
 You created a template site (i.e. Project site template or department site template) and want your new site to resemble same look and feel as the rest of the sites. Site templates can only be replicated across same site collection
 You only plan to have a handful of SharePoint sites in your organization. If you plan to roll out hundreds and hundreds of sites, you might take a look at reasons below.
 
-### Q3: WHEN TO CREATE A SITE COLLECTION IN SHAREPOINT?
+### Q5: WHEN TO CREATE A SITE COLLECTION IN SHAREPOINT?
 You are a large organization with multiple business units and each business unit has independent and separate business functions.
 You are a large organization and each of your departments has a large number of people and each department is expected to create lots and lots of sites that do not to rely on global metadata or security groups.
 You are a large organization and want to separate your SharePoint administrative functions (have separate SharePoint administrators for each site collection)
 Your organization has lots of content (I am talking about hundreds of GB). You can allocate both server resources and storage per site collection. So if you say have a number of sites that are running server-intensive workflows or you have lots of content, you can allocate separate site collections and assign those accordingly.
 
-### Q4: What is the difference between the Site and Page?
+### Q6: What is the difference between the Site and Page?
 
-### Q5: What is a list in SharePoint?
+### Q7: What is a list in SharePoint?
 A SharePoint list is a container for information, similar to a very simple database or spreadsheet. Using a list is the most common way to manage information in a SharePoint site.
 https://sharepointmaven.com/create-custom-list-sharepoint/
 https://www.linkedin.com/pulse/what-sharepoint-framework-spfx-mark-kashman/
 
-### Q6: What is SharePoint Framework?
+### Q8: What is SharePoint Framework?
 The SharePoint Framework (SPFx) is a page and web part model that provides full support for client-side SharePoint development, easy integration with SharePoint data, and support for open source tooling. With the SharePoint Framework, you can use modern web technologies and tools in your preferred development environment to build productive experiences and apps that are responsive and mobile-ready from day one. The SharePoint Framework works for SharePoint Online and also for on-premises (SharePoint 2016 Feature Pack 2 and SharePoint 2019).
 
 Key features of the SharePoint Framework include the following:
@@ -139,7 +139,7 @@ Performance is reliable.
 End users can use SPFx client-side solutions that are approved by the tenant administrators (or their delegates) on all sites, including self-service team, group, or personal sites.
 SPFx web parts can be added to both classic and modern pages.
 
-### Q7: Why the SharePoint Framework?
+### Q9: Why the SharePoint Framework?
 That architecture worked well in environments with only one enterprise, but it didn’t scale to the cloud, where multiple tenants run side-by-side. As a result, we introduced two alternative models: client-side JavaScript injection, and SharePoint Add-ins. Both of these solutions have pros and cons.
 
 JavaScript injection
@@ -152,7 +152,7 @@ The current option for solutions that run in NoScript sites is the add-in/app-pa
 
 There are some downsides to this approach as well. First, they run in an iFrame. iFrames are slower than the Script Editor web part, because it requires a new request to another page. The page has to go through authentication and authorization, make its own calls to get SharePoint data, load various JavaScript libraries, and more. A Script Editor web part might typically take, for example, 100 milliseconds to load and render, while an app part might take 2 seconds or more. Additionally, the iFrame boundary makes it more difficult to create responsive designs and inherit CSS and theming information. iFrames do have stronger security, which can be useful for you (your page is inaccessible by other controls on the page) and for the end user (the control has no access to their connection to Office 365).
 
-### Q7: Script Editor Web parts vs App Parts vs SPFx Web parts
+### Q10: Script Editor Web parts vs App Parts vs SPFx Web parts
 
 **SPFx Webparts**
 
@@ -182,7 +182,7 @@ https://www.voitanos.io/pages/ec-spfxdev-day-3-of-10-how-the-sharepoint-framewor
 
 Customizations deployed for use with the SharePoint Framework are uploaded to the tenant’s app catalog site making the customizations available across any site within the tenant.
 
-### Q8: Share Point Framework vs Farm solutions vs sandboxed solution
+### Q11: Share Point Framework vs Farm solutions vs sandboxed solution
 Ans:
 **Share Point Framework**
 1. Client side execution Model
@@ -226,6 +226,7 @@ Implemented manually; no automated deployment
 
 After solutions came SharePoint Add-ins, initially called apps. Man the reason why they were renamed from apps to add-ins is an interesting one, but that’s for another time.
 
+### Q12: Share Point Addins
 These are available in two flavors, the SharePoint Hosted Add-in and the Provider Hosted Add-in.
 
 For SharePoint Hosted Add-ins, they run exclusively within a client-side context. Any custom business logic has to be implemented using JavaScript as the files deployed to SharePoint while stored in SharePoint, are not run on the server. They are rendered in the client and run there.
