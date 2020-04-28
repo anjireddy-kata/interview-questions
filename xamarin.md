@@ -260,6 +260,15 @@ Set the LineBreakMode of any Label instances to NoWrap whenever possible.
 ##### Use asynchronous programming
 ##### Use CollectionView instead of ListView
 ##### Use the custom renderer pattern
+
+### Q23: What is the difference between Message Center and Events in Xamarin?
+MessagingCenter is basically used in the Model-View-ViewModel pattern.
+It is a great way to communicate and pass data or notify about updates among ViewModels without knowing who sent it to whom via a simple Message Contract.
+Ex. In one screen if you make any service call to fetch the new data and you want to notify other screens to update their UI via broadcasting message from your current screen, then MessagingCenter is the best approach.
+It decouples them without making any dependency among ViewModels, while EventHandlers makes dependency and may prohibit something from being released. You explicitly have to decouple event handlers from the events to better release the resources.
+MessagingCenter should be applied when the receiver doesn't care who sent the message and the sender doesn't care who will receive it. Events should be used when the receiver needs to know who sent the message, but the sender still doesn't care who handles it.
+It is good to use MessagingCenter over Events but, if you make too much use of too many Messages using MessagingCenter, it would be hard to identify who sent it and when sent it, the relation between messages would be hard to guess, thus making it hard time while debugging the app.
+
 ### Q22: What is Xamarin Profiler?
 Ans:
 Xamarin Profiler is a tool which is used by the developers to keep an eye on the information about the particular App inside the Visual Studio. With the help of Xamarin Profiler, developers can easily analyze the App's behavior. We can use the profiler to track the application's memory information and can sample its statistics.
