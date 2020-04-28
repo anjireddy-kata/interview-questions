@@ -70,6 +70,8 @@ Default
 One way – changes in the source affects the target
 One way to the source – changes in the target affect the source
 Two way – changes in the source and target affect each other
+OneTime – data goes from source to target, but only when the BindingContext changes (new with Xamarin.Forms 3.0)
+https://docs.microsoft.com/en-us/xamarin/xamarin-forms/app-fundamentals/data-binding/binding-mode
 
 ### Q8: What are the different ways to share the code in Xamarin?
 Ans:
