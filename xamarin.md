@@ -35,18 +35,19 @@ Compatibility issues with the third party libraries and the tools
 Ans:
 Xamarin has two approaches for app development. These are
 
-Xamarin.Forms: 
+###### Xamarin.Forms
 Xamarin.Forms is a framework which is used to build the user interface in the mobile application.
 
 Forms are the choices for the developers who want to create one application for all the separate mobile platforms, which are Windows, iOS, and Android. Xamarin.Forms allows the developer to create just one UI which can be used across all platforms like Android, iOS, and Windows.
 
-Xamarin Native: This approach is used in those scenarios when we want to create a separate version of the same App for different platforms. Developers can use Xamarin.iOS, Xamarin.Android and Xamarin.Windows libraries to create the applications for each particular platform.
+###### Xamarin Native
+This approach is used in those scenarios when we want to create a separate version of the same App for different platforms. Developers can use Xamarin.iOS, Xamarin.Android and Xamarin.Windows libraries to create the applications for each particular platform.
 
 ### Q5: What is XAML and what are the advantages of XAML?
 Ans:
 XAML stands for the Extensible Application Markup Language. XAML allows you to define the user interface in Xamarin. Forms application use the markup language rather than code. i.e. In xamarin, you use XAML to define the UI and .NET code to define the business logic.
 
-Advantages:
+**Advantages:**
 XAML gives a clean division between an application and its code. Thus, it enables a clear developer-designer workflow.
 XAML has the parent-child hierarchy of user-interface objects with greater visual simplicity.
 
@@ -66,19 +67,19 @@ Data binding is the technique of linking properties of two objects so that chang
 
 The following are the different types of data binding modes in Xamarin:
 
-Default
-One way – changes in the source affects the target
-One way to the source – changes in the target affect the source
-Two way – changes in the source and target affect each other
-OneTime – data goes from source to target, but only when the BindingContext changes (new with Xamarin.Forms 3.0)
+* Default
+* One way – changes in the source affects the target
+* One way to the source – changes in the target affect the source
+* Two way – changes in the source and target affect each other
+* OneTime – data goes from source to target, but only when the BindingContext changes (new with Xamarin.Forms 3.0)
 https://docs.microsoft.com/en-us/xamarin/xamarin-forms/app-fundamentals/data-binding/binding-mode
 
 ### Q8: What are the different ways to share the code in Xamarin?
 Ans:
 
-.NET Standard Libraries
-Shared Projects
-Portable Class Libraries (Deprecated)
+1. .NET Standard Libraries
+2. Shared Projects
+3. Portable Class Libraries (Deprecated)
 
 ###### .NET Standard Libraries
 .NET Standard Libraries is a way to share common code over multiple runtimes. .NET Standard is a set of specifications which various .NET runtimes adhere to and hence code written for one version of .NET Standard works on multiple versions of .NET runtimes like .NET Core, Mono, etc.  You can write your code and compile it into .NET Class Library and share it with others.
@@ -91,10 +92,10 @@ A cross-platform application that supports iOS, Android, and Windows would requi
 
 So, if you are creating a cross-platform app for Android, iOS, and Windows, you will usually have the following projects
 
-Shared Project – the Shared Project that contains the code which is common for all platforms viz iOS, UWP, Android
-AppAndroid – the Xamarin.Android project that specifically calls the underlying .NET APIs exposed for Android
-AppiOS – Xamarin.iOS application project that specifically calls the underlying .NET APIs exposed for iOS
-AppWindows – Windows application project that utilizes exposed Windows APIs and specific to UWP (Universal Windows Platform)
+* Shared Project – the Shared Project that contains the code which is common for all platforms viz iOS, UWP, Android
+* AppAndroid – the Xamarin.Android project that specifically calls the underlying .NET APIs exposed for Android
+* AppiOS – Xamarin.iOS application project that specifically calls the underlying .NET APIs exposed for iOS
+* AppWindows – Windows application project that utilizes exposed Windows APIs and specific to UWP (Universal Windows Platform)
 A Shared Project is not directly compiled. In other words, no DLL file is produced in the compilation process. Instead, the files are compiled into the same DLL as the project that references it. This way, it is possible to write blocks of platform-specific code in the Shared Project that will only be compiled by the specific platform.
 
 ### Q9: What are custom renders in xamarin.Forms?
@@ -114,9 +115,9 @@ The lifecycle of an app contains the sequence of methods that are called since t
 
 The various life cycle methods of XamarinForms Apps are:
 
-OnStart: when the application initializes onStart is called. It is the best place to initialize objects
-OnSleep: Once the application goes to the background, the state is called ‘resume’. The app does not die here rather is kept in memory but with reduced priority. OnSleep() is similar to OnPause() in Android
-OnResume: OnResume is called when the application is resumed, i.e after being sent to the background. Similar to OnResume on Android.
+**OnStart:** when the application initializes onStart is called. It is the best place to initialize objects
+**OnSleep:** Once the application goes to the background, the state is called ‘resume’. The app does not die here rather is kept in memory but with reduced priority. OnSleep() is similar to OnPause() in Android
+**OnResume:** OnResume is called when the application is resumed, i.e after being sent to the background. Similar to OnResume on Android.
 
 ### Q12: What are behaviours in xamarin.forms?
 Ans:
@@ -139,10 +140,10 @@ Triggers allow the developer to specify actions declaratively in XAML to change 
 
 There are namely four types of triggers:
 
-Property Trigger: Property Trigger comes into action when the value of the property of a control is assigned a value
-Data Trigger: It uses data binding to associate changes for some other control. When there are changes to another control, Data Trigger triggers changes in the control
-Event Trigger: An Event trigger causes an action to happen when an event takes place
-Multi-Trigger: This is a special type of trigger which gets triggered when multiple trigger conditions get satisfied resulting in the raising of this trigger.
+**Property Trigger:** Property Trigger comes into action when the value of the property of a control is assigned a value
+**Data Trigger:** It uses data binding to associate changes for some other control. When there are changes to another control, Data Trigger triggers changes in the control
+**Event Trigger:** An Event trigger causes an action to happen when an event takes place
+**Multi-Trigger:** This is a special type of trigger which gets triggered when multiple trigger conditions get satisfied resulting in the raising of this trigger.
 
 ### Q14: What is info.plist in xamarin?
 To provide a seamless experience to users iOS provides metadata to the system in the form of info.plist (information property list file). This metadata is used by the system to identify the app, document types it supports, and to facilitate the launch of apps.
@@ -151,11 +152,11 @@ The property list can be accessed by the system at runtime. It containskey-value
 
 The various types of keys defined in info.plist files are:
 
-Core Foundation Keys: The keys specified in use the prefix 'CF' to distinguish them with other keys. They provide information related to bundles which help in loading them and knowing their content
-Launch Services Keys: They use the prefix LS to distinguish them from other keys. They provide metadata related to the launch time behavior of the app
-Cocoa Keys: Cocoa keys use the prefix NS to distinguish them from other keys. Cocoa keys define metadata related to Cocoa Touch Apps
+**Core Foundation Keys:** The keys specified in use the prefix 'CF' to distinguish them with other keys. They provide information related to bundles which help in loading them and knowing their content
+**Launch Services Keys:** They use the prefix LS to distinguish them from other keys. They provide metadata related to the launch time behavior of the app
+**Cocoa Keys:** Cocoa keys use the prefix NS to distinguish them from other keys. Cocoa keys define metadata related to Cocoa Touch Apps
 iOS Keys: UIKit keys use the prefix UI to distinguish them from other keys
-App Extension Keys: App extensions enable you to provide features to other apps in iOS and macOS. App Extension Keys provide system information about an app extension's capabilities and intents.
+**App Extension Keys:** App extensions enable you to provide features to other apps in iOS and macOS. App Extension Keys provide system information about an app extension's capabilities and intents.
 
 ### Q15: What is NSUserDefault? How to use NSUserDefault in Xamarin.ios?
 Sometimes a developer has a requirement to store some basic user data dealing with user settings and app configuration. There are plenty of ways that Xamarin.iOS provides to save this data in your app. One such way is through NSUserDefaults.
@@ -189,10 +190,10 @@ AsyncTask is a facility given by Android for executing operations in a backgroun
 
 Aynctask has following important callback methods:
 
-OnPreExecute:  OnPreExecute is invoked before the actual Background Task is executed. It is used to initialize the Asynctask or setup the task  For example setting up the progress bar to show while the task is being executed
+**OnPreExecute:**  OnPreExecute is invoked before the actual Background Task is executed. It is used to initialize the Asynctask or setup the task  For example setting up the progress bar to show while the task is being executed
 DoInBackground(Params … params): This is the main call back function which contains the code to do the background operation which may take a long time. The parameters of Asynctask are passed to this step and doInBackground can utilize them
-OnProgressUpdate: On Progress Update is a method which is called repeatedly and can be used to publish the progress that has been made by the background tasks so far
-OnPostExecute (Result result). : This is invoked on the UI thread. When the task is completed in DoInBackground the result is returned to this call-back. The user can display the result or store for an app to process.
+**OnProgressUpdate:** On Progress Update is a method which is called repeatedly and can be used to publish the progress that has been made by the background tasks so far
+**OnPostExecute (Result result). :** This is invoked on the UI thread. When the task is completed in DoInBackground the result is returned to this call-back. The user can display the result or store for an app to process.
 Asynctasks should always be created and loaded on the GUI thread. They cannot be started more than once.
 ### Q19: What is pendingintent in Xamarin.Android?
 
@@ -206,17 +207,17 @@ Unlike Android, iOS does not allow users to directly install third-party apps. O
 
 A provisioning profile necessarily consists of:
 
-Development Certificates : These are for developers who want to test the app on a physical device while writing code
-Unique Device Identifiers:  the List of devices that the app can run on
-An App ID: It is a two-part string used to uniquely identify different apps from a single development team.
+**Development Certificates:** These are for developers who want to test the app on a physical device while writing code
+**Unique Device Identifiers:**  the List of devices that the app can run on
+**An App ID:** It is a two-part string used to uniquely identify different apps from a single development team.
 
 ### Q21:What are the different types of gestures supported by Xamarin.Forms?
 Mobile gestures are the movements made by a user to perform a specific action on a control within a mobile interface majorly through fingers(tap, swipe, drag, slide, etc.). The various Gestures supported by Xamarin.Forms are:
 
-Tap Gesture: Xamarin supports the tap gesture. A tap gesture is recognised when the user touches the mobile screen with single or multiple fingers once or twice in quick succession. The Tap Gesture is recognized with TapGestureRecognizer Class class.
-Pinch  Gesture: Pinch Gesture occurs when the user places two fingers on the screen at a distance and brings them towards each other or keeps them together and moves them away from each other. This gesture is common to zoom in or out in a map mode. The Pinch Gesture is recognized with PinchGestureRecognizer Class.
-Pan Gesture: A pan gesture is used for detecting the movement of fingers around the screen. These movements are then applied to the content currently at the display. It is recognized with  the PanGestureRecognizer class
-Swipe Gesture: A swipe gesture occurs when a finger is moved across the mobile screen in a horizontal or vertical direction and is often used to initiate navigation through content. Swipe gestures are recognized with SwipeGestureRecognizer class.
+**Tap Gesture:** Xamarin supports the tap gesture. A tap gesture is recognised when the user touches the mobile screen with single or multiple fingers once or twice in quick succession. The Tap Gesture is recognized with TapGestureRecognizer Class class.
+**Pinch  Gesture:** Pinch Gesture occurs when the user places two fingers on the screen at a distance and brings them towards each other or keeps them together and moves them away from each other. This gesture is common to zoom in or out in a map mode. The Pinch Gesture is recognized with PinchGestureRecognizer Class.
+**Pan Gesture:** A pan gesture is used for detecting the movement of fingers around the screen. These movements are then applied to the content currently at the display. It is recognized with  the PanGestureRecognizer class
+**Swipe Gesture:** A swipe gesture occurs when a finger is moved across the mobile screen in a horizontal or vertical direction and is often used to initiate navigation through content. Swipe gestures are recognized with SwipeGestureRecognizer class.
 
 ### Q22: Performance Improvements in Xamarin.Forms?
 Ans:
@@ -245,16 +246,16 @@ Layout compression removes specified layouts from the visual tree, in an attempt
 ##### Optimize layout performance
 To obtain the best possible layout performance, follow these guidelines:
 
-Reduce the depth of layout hierarchies by specifying Margin property values, allowing the creation of layouts with fewer wrapping views. For more information, see Margins and Padding.
-When using a Grid, try to ensure that as few rows and columns as possible are set to Auto size. Each auto-sized row or column will cause the layout engine to perform additional layout calculations. Instead, use fixed size rows and columns if possible. Alternatively, set rows and columns to occupy a proportional amount of space with the GridUnitType.Star enumeration value, provided that the parent tree follows these layout guidelines.
-Don't set the VerticalOptions and HorizontalOptions properties of a layout unless required. The default values of LayoutOptions.Fill and LayoutOptions.FillAndExpand allow for the best layout optimization. Changing these properties has a cost and consumes memory, even when setting them to the default values.
-Avoid using a RelativeLayout whenever possible. It will result in the CPU having to perform significantly more work.
-When using an AbsoluteLayout, avoid using the AbsoluteLayout.AutoSize property whenever possible.
-When using a StackLayout, ensure that only one child is set to LayoutOptions.Expands. This property ensures that the specified child will occupy the largest space that the StackLayout can give to it, and it is wasteful to perform these calculations more than once.
-Avoid calling any of the methods of the Layout class, as they result in expensive layout calculations being performed. Instead, it's likely that the desired layout behavior can be obtained by setting the TranslationX and TranslationY properties. Alternatively, subclass the Layout<View> class to achieve the desired layout behavior.
-Don't update any Label instances more frequently than required, as the change of size of the label can result in the entire screen layout being re-calculated.
-Don't set the Label.VerticalTextAlignment property unless required.
-Set the LineBreakMode of any Label instances to NoWrap whenever possible.
+1. Reduce the depth of layout hierarchies by specifying Margin property values, allowing the creation of layouts with fewer wrapping views. For more information, see Margins and Padding.
+2. When using a Grid, try to ensure that as few rows and columns as possible are set to Auto size. Each auto-sized row or column will cause the layout engine to perform additional layout calculations. Instead, use fixed size rows and columns if possible. Alternatively, set rows and columns to occupy a proportional amount of space with the GridUnitType.Star enumeration value, provided that the parent tree follows these layout guidelines.
+3. Don't set the VerticalOptions and HorizontalOptions properties of a layout unless required. The default values of LayoutOptions.Fill and LayoutOptions.FillAndExpand allow for the best layout optimization. Changing these properties has a cost and consumes memory, even when setting them to the default values.
+4. Avoid using a RelativeLayout whenever possible. It will result in the CPU having to perform significantly more work.
+5. When using an AbsoluteLayout, avoid using the AbsoluteLayout.AutoSize property whenever possible.
+6. When using a StackLayout, ensure that only one child is set to LayoutOptions.Expands. This property ensures that the specified child will occupy the largest space that the StackLayout can give to it, and it is wasteful to perform these calculations more than once.
+7. Avoid calling any of the methods of the Layout class, as they result in expensive layout calculations being performed. Instead, it's likely that the desired layout behavior can be obtained by setting the TranslationX and TranslationY properties. Alternatively, subclass the Layout<View> class to achieve the desired layout behavior.
+8. Don't update any Label instances more frequently than required, as the change of size of the label can result in the entire screen layout being re-calculated.
+9. Don't set the Label.VerticalTextAlignment property unless required.
+10. Set the LineBreakMode of any Label instances to NoWrap whenever possible.
   
   
 ##### Use asynchronous programming
