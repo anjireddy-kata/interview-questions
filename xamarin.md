@@ -216,8 +216,53 @@ Pinch  Gesture: Pinch Gesture occurs when the user places two fingers on the scr
 Pan Gesture: A pan gesture is used for detecting the movement of fingers around the screen. These movements are then applied to the content currently at the display. It is recognized with  the PanGestureRecognizer class
 Swipe Gesture: A swipe gesture occurs when a finger is moved across the mobile screen in a horizontal or vertical direction and is often used to initiate navigation through content. Swipe gestures are recognized with SwipeGestureRecognizer class.
 
+### Q22: Performance Improvements in Xamarin.Forms?
+Ans:
+##### Enable th XAML Compiler
+XAML can be optionally compiled directly into intermediate language (IL) with the XAML compiler (XAMLC). XAMLC offers a number of benefits:
+
+It performs compile-time checking of XAML, notifying the user of any errors.
+It removes some of the load and instantiation time for XAML elements.
+It helps to reduce the file size of the final assembly by no longer including .xaml files.
+XAMLC is enabled by default in new Xamarin.Forms solutions. However, it may need to be enabled in older solutions. 
+
+##### Use compiled bindings
+Compiled bindings improve data binding performance in Xamarin.Forms applications by resolving binding expressions at compile time, rather than at runtime with reflection. Compiling a binding expression generates compiled code that typically resolves a binding 8-20 times quicker than using a classic binding.
+
+##### Reduce unnecessary bindings
+Don't use bindings for content that can easily be set statically. There is no advantage in binding data that doesn't need to be bound, because bindings aren't cost efficient. For example, setting Button.Text = "Accept" has less overhead than binding Button.Text to a viewmodel string property with value "Accept".
+
+##### Use Fast Renderers
+Fast renderers reduce the inflation and rendering costs of Xamarin.Forms controls on Android by flattening the resulting native controls hierarchy. This further improves performance by creating fewer objects, which in turn results in a less complex visual tree and less memory usage.
+
+##### Enable layout compression
+Layout compression removes specified layouts from the visual tree, in an attempt to improve page rendering performance. The performance benefit that this delivers varies depending on the complexity of a page, the version of the operating system being used, and the device on which the application is running. However, the biggest performance gains will be seen on older devices. 
+
+##### Choose the correct layout 
+
+##### Optimize layout performance
+To obtain the best possible layout performance, follow these guidelines:
+
+Reduce the depth of layout hierarchies by specifying Margin property values, allowing the creation of layouts with fewer wrapping views. For more information, see Margins and Padding.
+When using a Grid, try to ensure that as few rows and columns as possible are set to Auto size. Each auto-sized row or column will cause the layout engine to perform additional layout calculations. Instead, use fixed size rows and columns if possible. Alternatively, set rows and columns to occupy a proportional amount of space with the GridUnitType.Star enumeration value, provided that the parent tree follows these layout guidelines.
+Don't set the VerticalOptions and HorizontalOptions properties of a layout unless required. The default values of LayoutOptions.Fill and LayoutOptions.FillAndExpand allow for the best layout optimization. Changing these properties has a cost and consumes memory, even when setting them to the default values.
+Avoid using a RelativeLayout whenever possible. It will result in the CPU having to perform significantly more work.
+When using an AbsoluteLayout, avoid using the AbsoluteLayout.AutoSize property whenever possible.
+When using a StackLayout, ensure that only one child is set to LayoutOptions.Expands. This property ensures that the specified child will occupy the largest space that the StackLayout can give to it, and it is wasteful to perform these calculations more than once.
+Avoid calling any of the methods of the Layout class, as they result in expensive layout calculations being performed. Instead, it's likely that the desired layout behavior can be obtained by setting the TranslationX and TranslationY properties. Alternatively, subclass the Layout<View> class to achieve the desired layout behavior.
+Don't update any Label instances more frequently than required, as the change of size of the label can result in the entire screen layout being re-calculated.
+Don't set the Label.VerticalTextAlignment property unless required.
+Set the LineBreakMode of any Label instances to NoWrap whenever possible.
+  
+  
+##### Use asynchronous programming
+##### Use CollectionView instead of ListView
+##### Use the custom renderer pattern
 ### Q22: What is Xamarin Profiler?
 Ans:
 Xamarin Profiler is a tool which is used by the developers to keep an eye on the information about the particular App inside the Visual Studio. With the help of Xamarin Profiler, developers can easily analyze the App's behavior. We can use the profiler to track the application's memory information and can sample its statistics.
+
+https://docs.microsoft.com/en-us/xamarin/xamarin-forms/app-fundamentals/custom-renderer/entry
+
 
 
