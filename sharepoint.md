@@ -330,22 +330,22 @@ From the SharePoint List or Library view
 Earlier, you acheive this using sharepoint designer.
 
 ### Q28: What are the major components of Power Apps?
-*Gallery
+**Gallery**
 A gallery is a way of visualizing the data in the app. It is a template that allows you to see and navigate data.for example, you might have a gallery that contains a screen to see all the reconrds, then a screen to view the given record and a screen to edit a record.
 
-*Screen
+**Screen**
 A screen is a way to visualize a particular dataset or record on a screen (a mobile, ipad, desktop). you typically have one to view all records, one to view particular recond, once to edit. Once again, when you create an app from the template, you have screens already pre-built for you (they are part of a gallery you choose above). But you can add additional screens if necessary.
-* Card
+**Card**
 A screen consistes of cards. A card is an area on the screen that shows a given record from your SharePoint list or any other database you used to build an app.  For example, if you had a SharePoint list storing project names and built a PowerApp from this list, a single card might contain a Project Name field or Project Manager field or Project Type field or a Status field.
 
 A card would contain all various attributes (called Controls in PowerApp) related to the display of the record. 
 
-* Control
+**Control**
 Controls is what allows you to visualize and interact with your records. Depending on the type of your field, you can have different types of controls.
 
-* Property
+**Property**
 Each control has properties. For example, a text entry box has a property for font size, text color, text box fill color and so on. Properties can be accessed and changed from the Properties drop-down on the left-hand-side of the screen as well as on the panel on the right-hand-side once the property is selected.
 
-*Function
+**Function**
 Functions is how you interact with and change the properties. If you are familiar with Excel, you are in luck as the syntax for PowerApps functions is kind of similar to Excel.
 Ref: https://sharepointmaven.com/6-major-components-of-powerapps/
