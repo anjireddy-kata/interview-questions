@@ -57,13 +57,13 @@ Hash: A hash is a fixed-length string of bits i.e. procedurally and deterministi
 
 HMAC: HMAC stands for Hash-based Message Authentication Code. It is a process for applying a hash algorithm to both data and a secret key that results in a single final hash.
 
-### Q6: What is the difference between package.json and package-locak.json?
+### Q6: What is the difference between package.json and package-lock.json?
 
 ### Q7: How do you handle the exceptions globally in NodeJS?
 
-### Q8: Implement a get request with JWT AUthentication?
-
 ### Q9: What is JWT Token?
+
+### Q8: How do you implement JWT AUthentication in NodeJS?
 
 ### Q10: Please explain a scenario where you have used Event Emitters?
 
@@ -89,3 +89,7 @@ In Short, process.nextClick() execute immediately afeter completion of current e
 * Global
 * Process
 * Buffer
+
+### Q17: What's the difference between operational and programmer errors?
+Operation errors are not bugs, but problems with the system, like request timeout or hardware failure.
+On the other hand programmer errors are actual bugs.
