@@ -67,7 +67,25 @@ HMAC: HMAC stands for Hash-based Message Authentication Code. It is a process fo
 
 ### Q10: Please explain a scenario where you have used Event Emitters?
 
+### Q12: What is middleware?
+Middleware are basically just functions that have full access to both request and response objects. 
+
+Few Examples for Middlewares are logging, Authentication and Authorization etc.
+
 ### Q11: when to use process.nextTick() and setImmediate()
 Use setImmediate if you want to queue the function behind whatever I/O event callbacks that are already in the event queue. Use process.nextTick to effectively queue the function at the head of the event queue so that it executes immediately after the current function completes.
 
 In Short, process.nextClick() execute immediately afeter completion of current execution method. setImmediate is queued for execution of current I/O events.
+
+### Q12: Place Order scenario and communication between the multiple functions like OrderService, PaymentService etc.
+
+### Q13: Cache Implementation
+
+### Q14: Performance Optimization Techniques
+
+### Q15: cluster mode
+
+### Q16: What are globals in Node.js?
+* Global
+* Process
+* Buffer
