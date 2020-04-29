@@ -349,3 +349,31 @@ Each control has properties. For example, a text entry box has a property for fo
 **Function**
 Functions is how you interact with and change the properties. If you are familiar with Excel, you are in luck as the syntax for PowerApps functions is kind of similar to Excel.
 Ref: https://sharepointmaven.com/6-major-components-of-powerapps/
+
+### Q28: What is Delve?
+In the simplest of terms, Delve is a search engine. The fundamental purpose of the app is to make it easier to find your content in Office 365.
+There was search capability in SharePoint before the arrival of Delve. What Delve does is make the search engine smarter, simplifying SharePoint search as a whole. Using artificial intelligence and learning capabilities that most search interfaces lack, Delve works to show you the content that is most relevant to you before you even search for it. Delve uses Office Graph technology—another relatively recent addition to Office 365—to display these relevant search results so you can use them.
+
+Delve aggregate the content from Office 365, SharePoint, OneDrive, and other connected apps and systems. 
+
+Delve collects this information by taking all the data you have across your Microsoft ecosystem and learning from it. If you have a meeting scheduled in your calendar, Delve will know. If you’ve been having conversations in Yammer, Delve will know. Delve will even know what kind of emails you’ve been sending. 
+
+### Q29: Key components of Microsoft Teams
+Channels
+Tabs
+Connectors
+Bots
+
+### SharePoint Teams
+SharePoint team sites provide a collaboration space within SharePoint where a group can work together on a project. Unlike Microsoft Teams, a new SharePoint team site can be created for each project that the group is working on. Another difference between these two collaboration tools is guest access. With SharePoint teams, you can contribute to the team site through a web browser even if you don’t have a SharePoint Team Services-compatible client program installed. If you do have a compatible client program, you can seamlessly incorporate your work into that program with the team site.
+
+Additionally, SharePoint teams facilitate sharing of information between colleagues. You can easily add events, to-do items, and documents to the team site. You can even hold discussions or post a poll to the site.
+
+### Q30: Key components of SharePoint Teams?
+**Lists**: The SharePoint team site comes with five preset lists: announcements, contacts, events, tasks, and links. These lists can be customized and you can also create new lists. If you are using a SharePoint Team-compatible client program, you can take spreadsheets from the program and design lists based on them. The lists feature is an easy way to organize various categories of information.
+
+**Document Libraries**: When you share files with team members, they automatically get added to the built-in document library in your team site. The document library page contains a list of all the files and hyperlinks to each file so team members can find information in a snap.
+
+**Discussion boards:** The goal of discussion boards is to reduce the need for email among group members. Instead, team members can create discussions where any member can post and reply. 
+
+**Surveys:** You can quickly create a survey on your team site to poll your members’ opinions and reach a decision.
