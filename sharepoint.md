@@ -232,3 +232,120 @@ These are available in two flavors, the SharePoint Hosted Add-in and the Provide
 For SharePoint Hosted Add-ins, they run exclusively within a client-side context. Any custom business logic has to be implemented using JavaScript as the files deployed to SharePoint while stored in SharePoint, are not run on the server. They are rendered in the client and run there.
 
 In the case of Provider Hosted Add-ins, these are more open-ended. The developer, or provider, of the add-in, deploys a web application external to SharePoint and thus, can use any web development techniques at their disposal.
+
+### Q13: When do we use CSOM and when do we use Server side object model in SharePoint?
+Both CSOM and Server side Object Model has advantages and disadvantages and this will depend on your project requirement.
+
+Server Side Object Model: When you write the code in C#.NET or VB.NET, which will be executing at server side and required deployment on Server where SharePoint installed. It takes multiple steps deploy and you have to deploy as a solution.
+
+CSOM : CSOM you do not need to deploy the code on the Server. It can be used in any Desktop or Web Client. You don’t need to do the safe control entry, no GAC deployments and No need of restaring IIS and No overload on server. Much Faster than Server side object model.
+
+Csom is used when we can deal with lists , libraries and other objects where data can be fetched from client side. Whereas, server side is uded mainly for timer jobs,dealing with central admin , visual webparts and application pages, where client side dlls wont serve purpose.
+
+### Q14: What is the Difference between Master Pages and Layout Pages in SharePoint?
+Master Page: The main template where all the common/shareable things like html controls( for footer, header and navigation),CSS, JS files.
+We could have only one master page for each sharepoint site.
+
+Page Layout: Basically it contains the HTML controls,CSS and JS files which are only specific for creating look and feel for specific pages, and it inherits look and feel from master page.
+We can have multiple page layouts for site.
+
+### Q15: How to set item level permission permission in a list?
+The item level permission can be set by multiple ways. Such as: 
+1. By opening list and sharing item to any user manually using GUI. 
+2. Programmatically using CSOM, SSOM, REST API. 
+3. We can also develop a custom SharePoint Designer workflow to set the permission on the SharePoint List items.
+
+### Q16: What is User Information List and when does user get added to the sharepoint site?
+he User Information List (“/_catalogs/users/simple.aspx” or “_catalogs/users/detail.aspx”) is a hidden list in each site collection that is only visible and accessible to Site Collection Administrators. The User Information List stores metadata information about a user. Some metadata examples are Display Name (name), Login Name (samAccountName), Department, Picture, Email, SID (determines authorization rights), etc.
+
+User gets added to the user information list if the when the users are explicitly added to the sharepoint site or when the users access the site.
+
+### Q17: Difference between Timer Job and Windows Task Scheduler?
+**Timer Jobs**
+1. Timer jobs require downtime to deploy.
+2. Control via Central Admin.
+3. Schedule of Timer Job will be backed up and restore in your normal process of SharePoint backup and restore.
+4. Can be deployed using standard WSP solution.
+5. Custom Timer Jobs provides the power to specify Job LockTypes (i.e. SPJobLockTypes) which guarantees that multiple instances of same 6. job will never execute at the same point in time.
+**Windows Task Scheduler**
+1. Windows Scheduled task doesn't require downtime to install/update.
+2. The task will only run on the server that you've installed it on.
+3. Administrator needs to manually manage backup and restore of Schedule Tasks
+4. No standard built in deployment method
+5. No multiple instance guarantee. Administrator needs to make sure that no two instances are running at the same time.
+Ref: https://sharepoint.stackexchange.com/questions/96089/when-should-we-use-sharepoint-timer-job-and-when-windows-task-scheduler
+### Q19. What is SPSite and SPWeb?
+The SPSite object represents a collection of sites, i.e. Site Collection, a top level site and all its sub sites. - It is used to get a sub site of a Site Collection. - It is represented within an SPSiteCollection object that consists of the collection of all site collections in the Web application. - It contains the various subsites and the information regarding them. SPWeb: - The SPWeb object represents an instance of a SharePoint Web, and the SPWeb object contains things like the actual content. - It represents a SharePoint Foundation website. - SPWeb object automatically adds the new SPWeb object to an internal list. - It contains things like the actual content.
+
+### Q20. Difference between list and library in SharePoint?
+List: When you create any type of web content in SharePoint Online it is called List. For an example it can be calendar, task list, contact list or any kind of data with columns and rows which you create depending on your needs or you can use predefined templates.
+
+Share Point Library?
+A library in SharePoint is essentially a special list, explicitly created to store documents. That’s all it is. It is a special web part that already exists in SharePoint (called Document Library) that allows storing documents and has all the functionality around documents (document preview, versioning, check-in/check-out, document approval, file type breakdown, etc.)
+
+**Lists:**
+*Can have attachments
+*Have major versions only
+*Do not have Check-in/Check-out features
+
+**Libraries:**
+*Cannot have attachments (files are directly in the library)
+*Have both minor (draft) and major (published) versioning
+*Have Check-in/Check-Out
+*Publishing Libraries can use Page Layouts
+*Have Unique Document Ids out of the box
+
+### Q21: How to prevent users from accessing old versions of a document?
+OPTION 1: DISABLE VERSIONING ALTOGETHER
+Option 2: CREATE A CUSTOM PERMISSIONS LEVEL
+Ref: https://sharepointmaven.com/how-to-prevent-users-from-accessing-old-versions-of-a-document/
+
+### Q22: What is Microsoft flow?
+t allows you to automate business processes by building workflows based on certain triggers and actions. For example, once a new entry is added to the SharePoint list – an email can be sent asking an individual to review. 
+
+What makes the Microsoft Flow unique is that your workflow can interact with other applications like MailChimp, DropBox, Twitter, SharePoint, and OneDrive.
+
+### Q23: How to stop site and file sharing in SharePoint and OneDrive?
+https://sharepointmaven.com/how-to-stop-site-and-file-sharing-in-sharepoint-and-onedrive/
+
+### Q24: What is a view in share point?
+https://sharepointmaven.com/4-ways-to-create-cool-custom-views-in-sharepoint/
+
+### Q25: Create a custom list in sharepoint
+https://sharepointmaven.com/create-custom-list-sharepoint/
+
+### Q26: What is power App?
+PowerApps is a software to build custom business applications without the knowledge of app development or custom coding.
+
+How power apps related to share point?
+PowerApps is independent of SharePoint, however, is tightly integrated with it, being part of the Office 365 suite. While PowerApps is designed to work with a number of different sources, like external databases, you can also easily connect PowerApps to any SharePoint list, library or OneDrive, which allows you to store and retrieve information without a need to know databases or SQL. You can also connect to many other data sources (Twitter, Box, etc.)
+
+PowerApps potentially will alleviate the need to hire expensive custom developers, giving you the power and tools necessary to move your business forward.
+
+### Q27: Where can we run power apps?
+On the Web via Microsoft Dynamics 365
+On the mobile device via Windows Mobile, iOS or Android
+From the SharePoint List or Library view
+
+Earlier, you acheive this using sharepoint designer.
+
+### Q28: What are the major components of Power Apps?
+*Gallery
+A gallery is a way of visualizing the data in the app. It is a template that allows you to see and navigate data.for example, you might have a gallery that contains a screen to see all the reconrds, then a screen to view the given record and a screen to edit a record.
+
+*Screen
+A screen is a way to visualize a particular dataset or record on a screen (a mobile, ipad, desktop). you typically have one to view all records, one to view particular recond, once to edit. Once again, when you create an app from the template, you have screens already pre-built for you (they are part of a gallery you choose above). But you can add additional screens if necessary.
+* Card
+A screen consistes of cards. A card is an area on the screen that shows a given record from your SharePoint list or any other database you used to build an app.  For example, if you had a SharePoint list storing project names and built a PowerApp from this list, a single card might contain a Project Name field or Project Manager field or Project Type field or a Status field.
+
+A card would contain all various attributes (called Controls in PowerApp) related to the display of the record. 
+
+* Control
+Controls is what allows you to visualize and interact with your records. Depending on the type of your field, you can have different types of controls.
+
+* Property
+Each control has properties. For example, a text entry box has a property for font size, text color, text box fill color and so on. Properties can be accessed and changed from the Properties drop-down on the left-hand-side of the screen as well as on the panel on the right-hand-side once the property is selected.
+
+*Function
+Functions is how you interact with and change the properties. If you are familiar with Excel, you are in luck as the syntax for PowerApps functions is kind of similar to Excel.
+Ref: https://sharepointmaven.com/6-major-components-of-powerapps/
