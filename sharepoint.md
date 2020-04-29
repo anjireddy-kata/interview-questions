@@ -233,7 +233,7 @@ For SharePoint Hosted Add-ins, they run exclusively within a client-side context
 
 In the case of Provider Hosted Add-ins, these are more open-ended. The developer, or provider, of the add-in, deploys a web application external to SharePoint and thus, can use any web development techniques at their disposal.
 
-### Q13: When do we use CSOM and when do we use Server side object model in SharePoint?
+### Q13: When do we use CSOM (Client Side Object Model) and when do we use SSOM (Server side object model) in SharePoint?
 Both CSOM and Server side Object Model has advantages and disadvantages and this will depend on your project requirement.
 
 Server Side Object Model: When you write the code in C#.NET or VB.NET, which will be executing at server side and required deployment on Server where SharePoint installed. It takes multiple steps deploy and you have to deploy as a solution.
