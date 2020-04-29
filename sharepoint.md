@@ -377,3 +377,39 @@ Additionally, SharePoint teams facilitate sharing of information between colleag
 **Discussion boards:** The goal of discussion boards is to reduce the need for email among group members. Instead, team members can create discussions where any member can post and reply. 
 
 **Surveys:** You can quickly create a survey on your team site to poll your members’ opinions and reach a decision.
+
+### Q31: What Is A SharePoint Hub Site In Office 365?
+SharePoint hub sites enable you to organize your intranet by associating multiple team sites and communication sites together in SharePoint. Hub sites provide common navigational structure, look and feel, and search across associated sites. You can use SharePoint Online hub sites in Office 365 to organize concepts, teams, divisions, or resources throughout your organization, making it easier to:
+
+*Search across all associated sites
+*Discover related content, such as news and other site activities
+*Apply common navigation and branding across associated sites
+
+Hub sites are designed to let you dynamically organize closely-related sites, bringing together similar projects, binding related assets, and presenting common activity.
+
+### Q32: Content Types in SharePoint? 
+https://www.c-sharpcorner.com/article/content-type-in-sharepoint-2013/
+
+## SharePoint Framework
+
+### Q32: What is SharePoint Client-side webpart?
+SharePoint client-side web parts are controls that appear inside a SharePoint page but run locally in the browser. They're the building blocks of pages that appear on a SharePoint site.
+
+Client-side web parts are client-side components that run inside the context of a SharePoint page. Client-side web parts can be deployed to SharePoint Online, and you can also use modern JavaScript tools and libraries to build them.
+
+Client-side web parts support:
+
+Building with HTML and JavaScript.
+Both SharePoint Online and on-premises environments.
+https://docs.microsoft.com/en-us/sharepoint/dev/spfx/web-parts/get-started/build-a-hello-world-web-part
+
+
+### Q33: SPFx webpart life cycle methods
+When the webpart is loading in the page, following methods will be triggered in order
+1. protected onAfterDeserialize(deserializedObject: any, dataVersion: Version): TProperties;
+2. protected onInit(): Promise<void>;
+3. protected render(): void;
+4. protected onBeforeSerialize(): void;
+  
+When the webpart is removed from the page, below methods will get triggered
+1. protected onDispose(): void;
