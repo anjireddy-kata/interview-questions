@@ -403,8 +403,11 @@ Building with HTML and JavaScript.
 Both SharePoint Online and on-premises environments.
 https://docs.microsoft.com/en-us/sharepoint/dev/spfx/web-parts/get-started/build-a-hello-world-web-part
 
-
-### Q33: SPFx webpart life cycle methods
+### Q33: What is SharePoint Hubsites?
+Ans:
+SharePoint hub sites connect and organize sites based on organizational attributes such as project, department, division, or region. You can use PowerShell cmdlets or the SharePoint REST API to automate tasks such as creating, removing, or controlling permissions for hub sites.
+https://docs.microsoft.com/en-us/sharepoint/dev/features/hub-site/hub-site-overview
+### Q34: SPFx webpart life cycle methods
 When the webpart is loading in the page, following methods will be triggered in order
 1. protected onAfterDeserialize(deserializedObject: any, dataVersion: Version): TProperties;
 2. protected onInit(): Promise<void>;
@@ -413,3 +416,36 @@ When the webpart is loading in the page, following methods will be triggered in 
   
 When the webpart is removed from the page, below methods will get triggered
 1. protected onDispose(): void;
+
+### Q35: what is lookup column in sharepoint?
+A lookup column is a referential integrity between the lists in SharePoint. It retrieves one or more values from a target list if those values match the value in the lookup column in the source list.
+
+SharePoint Supported Column Types for SharePoint lookup column
+* Single line of text
+* Number
+* Date and Time
+
+SharePoint Unsupported Column Types for SharePoint lookup column
+
+* Multiple lines of text
+* Currency
+* Person or Group
+* Calculated
+* Hyperlink or Picture
+* Custom Columns
+* Yes/No
+* Choice
+* Lookup
+### Q36: What are differences between Application Pages and Site Pages?
+Application These are the typical pages conveyed in SharePoint ,the greater part of them are found under _Layouts organizer which can be sent at ranch level or application level. Site pages will be pages that are made, altered, and tweaked by end clients. They are essentially utilized for the substance in a site. Website pages come in two kinds—a standard page and a Web Parts page.
+
+### Q37: How to connect to SharePoint site using CSOM PowerShell?
+$weburl= ‘https://tenant.sharepoint.com/sites/team’
+$ctx = New-Object Microsoft.SharePoint.Client.ClientContext ($webUrl)
+$username= “Provide username”
+$password=”Provide password”
+$ctx.credentials=New-Object Microsoft.SharePoint.Client.SharePointOnlineCredentials ($admin, $password)
+### Q38: When user click on OneDrive, it goes to delve page? How you will troubleshoot?
+OneDrive site has not been created for user, you have to check if SharePoint online license is assigned to user or not
+
+### Q39: 
