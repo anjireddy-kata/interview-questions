@@ -195,4 +195,8 @@ Key components in JSS
 
 https://helix.sitecore.net/principles/sitecore-items/item-types.html
 
+### Q22: Sitecore - multi-site or multi-instance
+http://digital-learnings.blogspot.com/2015/12/sitecore-multi-site-or-multi-instance.html
+https://www.slideshare.net/nonlinearcreations/sitecore-multisites
+https://www.advaiya.com/blog/sitecore-multisite-architecture-single-installation/
 
