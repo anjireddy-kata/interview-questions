@@ -284,16 +284,16 @@ Share Point Library?
 A library in SharePoint is essentially a special list, explicitly created to store documents. That’s all it is. It is a special web part that already exists in SharePoint (called Document Library) that allows storing documents and has all the functionality around documents (document preview, versioning, check-in/check-out, document approval, file type breakdown, etc.)
 
 **Lists:**
-*Can have attachments
-*Have major versions only
-*Do not have Check-in/Check-out features
+* Can have attachments
+* Have major versions only
+* Do not have Check-in/Check-out features
 
 **Libraries:**
-*Cannot have attachments (files are directly in the library)
-*Have both minor (draft) and major (published) versioning
-*Have Check-in/Check-Out
-*Publishing Libraries can use Page Layouts
-*Have Unique Document Ids out of the box
+* Cannot have attachments (files are directly in the library)
+* Have both minor (draft) and major (published) versioning
+* Have Check-in/Check-Out
+* Publishing Libraries can use Page Layouts
+* Have Unique Document Ids out of the box
 
 ### Q21: How to prevent users from accessing old versions of a document?
 OPTION 1: DISABLE VERSIONING ALTOGETHER
