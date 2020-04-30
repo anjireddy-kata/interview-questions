@@ -33,7 +33,7 @@ Firstly, add the site name in either web.config file or SiteDefintion.config fil
 Then add the site name in IIS binding.
 After that add the site name in the hosts' file.
 
-### Q6: Which are different types of publishing?
+### Q6: What are different types of publishing?
 
 * **Republish:** As the name implies, it will publish every item no matter whether it is changed or not. It is intended to be used when you are publishing a new site first time. This is the most time-consuming publishing method as it blindly publishes all items.
 * **Smart Publish:** This method works smartly by comparing each item in the master database with the item in the web database. Sitecore maintains the revision number for each item which gets changed whenever the item gets updated. By comparing this revision number with a web database, it will create a list of updated items changes and will publish only those items changes. Even though this method is comparing each item, it is much faster than the republish method.
@@ -50,7 +50,7 @@ Therefore only items that have been changed will be published and Sitecore does 
 * integrated audit logs
 * Compliancy with diverse accessibility frameworks and requirements, such as WAI-ARIA
 
-### Q8: what are key databases that get created with sitecore?
+### Q8: what are the key databases that get created with sitecore?
 * Core
 * master
 * web
