@@ -114,3 +114,12 @@ Windows Azure tables are ideal for storing structured, non-relational data
 2. Entity: An entity is a set of properties, similar to a database row. An entity can be up to 1MB in size.
 3. Properties: A property is a name-value pair. Each entity can include up to 252 properties to store data. Each entity also has 3 system properties that specify a partition key, a row key, and a timestamp.
 Entities with the same partition key can be queried more quickly, and inserted/updated in atomic operations. An entity’s row key is its unique identifier within a partition.
+
+### Q17: What are key areas of a DevOps?
+
+*Planning
+*Code management
+*Build and Testing
+*Release management
+*Deploy and Monitor
+
