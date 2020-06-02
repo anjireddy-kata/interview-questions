@@ -117,9 +117,18 @@ Entities with the same partition key can be queried more quickly, and inserted/u
 
 ### Q17: What are key areas of a DevOps?
 
-*Planning
-*Code management
-*Build and Testing
-*Release management
-*Deploy and Monitor
+* Planning
+* Code management
+* Build and Testing
+* Release management
+* Deploy and Monitor
 
+### Q18: What's the difference between a blue/green deployment and a rolling deployment?
+In Blue Green Deployment, you have TWO complete environments. One is Blue environment which is running and the Green environment to which you want to upgrade. Once you swap the environment from blue to green, the traffic is directed to your new green environment. You can delete or save your old blue environment for backup until the green environment is stable.
+
+In Rolling Deployment, you have only ONE complete environment. The code is deployed in the subset of instances of the same environment and moves to another subset after completion.
+
+### Q19: What are the differences between continuous integration, continuous delivery, and continuous deployment?
+* Developers practicing continuous integration merge their changes back to the main branch as often as possible. By doing so, you avoid the integration hell that usually happens when people wait for release day to merge their changes into the release branch.
+* Continuous delivery is an extension of continuous integration to make sure that you can release new changes to your customers quickly in a sustainable way. This means that on top of having automated your testing, you also have automated your release process and you can deploy your application at any point of time by clicking on a button.
+* Continuous deployment goes one step further than continuous delivery. With this practice, every change that passes all stages of your production pipeline is released to your customers. There's no human intervention, and only a failed test will prevent a new change to be deployed to production.
