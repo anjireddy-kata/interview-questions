@@ -255,3 +255,4 @@ Publish
 * ELK (Elasticsearch, Logstash, Kibana)
 
 ### Q34: What are the Advantages of Ansible?
+https://www.gangboard.com/blog/devops-interview-questions-and-answers
