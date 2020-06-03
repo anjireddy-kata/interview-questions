@@ -134,3 +134,30 @@ In Rolling Deployment, you have only ONE complete environment. The code is deplo
 * Continuous deployment goes one step further than continuous delivery. With this practice, every change that passes all stages of your production pipeline is released to your customers. There's no human intervention, and only a failed test will prevent a new change to be deployed to production.
 
 ### Q20: What is canary release?
+
+### Q21: What is devOps?
+DevOps is a culture that allows the development and the operations team to work together. This results in continuous development, testing, integration, deployment, and monitoring of the software throughout the lifecycle.
+
+### Q22: What are the different phases in DevOps?
+he various phases of the DevOps lifecycle are as follows:
+
+Plan - Initially, there should be a plan for the type of application that needs to be developed. Getting a rough picture of the development process is always a good idea.
+Code - The application is coded as per the end-user requirements. 
+Build - Build the application by integrating various codes formed in the previous steps.
+Test - This is the most crucial step of the application development. Test the application and rebuild, if necessary.
+Integrate - Multiple codes from different programmers are integrated into one.
+Deploy - Code is deployed into a cloud environment for further usage. It is ensured that any new changes do not affect the functioning of a high traffic website.
+Operate - Operations are performed on the code if required.
+Monitor - Application performance is monitored. Changes are made to meet the end-user requirements.
+
+### Q23:  core benefits of DevOps
+The core benefits of DevOps are as follows:
+
+*Technical benefits*
+* Continuous software delivery
+* Less complex problems to manage
+* Early detection and faster correction of defects
+Business benefits
+* Faster delivery of features
+* Stable operating environments
+* Improved communication and collaboration between the teams
