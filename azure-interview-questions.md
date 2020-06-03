@@ -162,3 +162,84 @@ The core benefits of DevOps are as follows:
 * Faster delivery of features
 * Stable operating environments
 * Improved communication and collaboration between the teams
+
+### Q24: How will you approach a project that needs to implement DevOps?
+
+The following standard approaches can be used to implement DevOps in a specific project:
+
+Stage 1
+An assessment of the existing process and implementation for about two to three weeks to identify areas of improvement so that the team can create a road map for the implementation.
+
+Stage 2
+Create a proof of concept (PoC). Once it is accepted and approved, the team can start on the actual implementation and roll-out of the project plan.
+
+Stage 3
+The project is now ready for implementing DevOps by using version control/integration/testing/deployment/delivery and monitoring followed step by step.
+
+By following the proper steps for version control, integration, testing, deployment, delivery, and monitoring, the project is now ready for DevOps implementation. 
+
+### Q25: Name three important DevOps KPIs
+Mean time to failure recovery - This is the average time taken to recover from a failure.
+Deployment frequency - The frequency in which the deployment occurs. 
+Percentage of failed deployments - The number of times the deployment fails.
+
+### Q26: How do you find a list of files that have been changed in a particular commit?
+
+The command to get a list of files that have been changed in a particular commit is:
+
+git diff-tree –r {commit hash}
+
+Example: git diff-tree –r 87e673f21b
+
+-r flag instructs the command to list individual files
+commit hash will list all the files that were changed or added in that commit
+
+### Q27: What concepts are key aspects of the Jenkins pipeline?
+Pipeline: User-defined model of a CD pipeline. The pipeline's code defines the entire build process, which includes building, testing and delivering an application
+Node: A machine that is part of the Jenkins environment and capable of executing a pipeline
+Step: A single task that tells Jenkins what to do at a particular point in time
+Stage: Defines a conceptually distinct subset of tasks performed through the entire pipeline (build, test, deploy stages)
+
+### Q28: Please explain Docker image, docker container, docker registry and docker-compose?
+
+### Q29: How do we share Docker containers with different nodes?
+It is possible to share Docker containers on different nodes with Docker Swarm.
+Docker Swarm is a tool that allows IT administrators and developers to create and manage a cluster of swarm nodes within the Docker platform.
+A swarm consists of two types of nodes: a manager node and worker node.
+
+### Q30: What are the commands used to create a Docker swarm?
+Create a swarm where you want to run your manager node.
+
+Docker swarm init --advertise-addr <MANAGER-IP> 
+Once you've created a swarm on your manager node, you can add worker nodes to your swarm.
+When a node is initialized as a manager, it immediately creates a token. In order to create a worker node, the following command (token) should be executed on the host machine of a worker node.
+
+Docker swarm join \ --token SWMTKN-1-49nj1cmql0jkz5s954yi3oex3nedyz0fb0xx14ie39trti4wxv-8vxv8rssmk743ojnwacrr2e7c \ 192.168.99.100:2377
+
+### Q31: Explain the differences between Docker images and Docker container?
+*Docker Images*
+Docker images are templates of Docker containers
+An image is built using a Dockerfile
+It is stored in a Docker repository or a Docker hub
+The image layer is a read-only filesystem
+
+*Docker Container*
+Containers are runtime instances of a Docker image
+Containers are created using Docker images
+They are stored in the Docker daemon
+Every container layer is a read-write filesystem
+
+### Q32: What is the purpose of the expose and publish commands in Docker?
+Expose
+* Expose is an instruction used in Dockerfile.
+* It is used to expose ports within a Docker network.
+* It is a documenting instruction used at the time of building an image and running a container.
+* Expose is the command used in Docker.
+* Example: Expose 8080
+
+Publish
+* Publish is used in a Docker run command.
+* It can be used outside a Docker environment.
+* It is used to map a host port to a running container port.
+* --publish or –p is the command used in Docker.
+* Example: docker run –d –p 0.0.0.80:80
