@@ -115,13 +115,14 @@ Windows Azure tables are ideal for storing structured, non-relational data
 3. Properties: A property is a name-value pair. Each entity can include up to 252 properties to store data. Each entity also has 3 system properties that specify a partition key, a row key, and a timestamp.
 Entities with the same partition key can be queried more quickly, and inserted/updated in atomic operations. An entity’s row key is its unique identifier within a partition.
 
-### Q17: What are key areas of a DevOps?
+### Q17: What are key aspects or principles of a DevOps?
 
 * Planning
-* Code management
+* Code management (Continuous Integration)
 * Build and Testing
 * Release management
 * Deploy and Monitor
+* security
 
 ### Q18: What's the difference between a blue/green deployment and a rolling deployment?
 In Blue Green Deployment, you have TWO complete environments. One is Blue environment which is running and the Green environment to which you want to upgrade. Once you swap the environment from blue to green, the traffic is directed to your new green environment. You can delete or save your old blue environment for backup until the green environment is stable.
@@ -243,3 +244,12 @@ Publish
 * It is used to map a host port to a running container port.
 * --publish or –p is the command used in Docker.
 * Example: docker run –d –p 0.0.0.80:80
+
+### Q33: List out some of the popular tools for DevOps?
+* Git
+* Jenkins
+* Ansible
+* Puppet
+* Nagios
+* Docker
+* ELK (Elasticsearch, Logstash, Kibana)
