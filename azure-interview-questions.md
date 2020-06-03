@@ -157,7 +157,8 @@ The core benefits of DevOps are as follows:
 * Continuous software delivery
 * Less complex problems to manage
 * Early detection and faster correction of defects
-Business benefits
+
+*Business benefits*
 * Faster delivery of features
 * Stable operating environments
 * Improved communication and collaboration between the teams
