@@ -71,4 +71,9 @@ Link combines the directives with a scope and produces a live view. For register
 Pre-linking function: Pre-linking function is executed before the child elements are linked. It is not considered as a safe way for DOM transformation.
 Post linking function: Post linking function is executed after the child elements are linked. It is safe to do DOM transformation by post-linking function.
 
-Q13: 
+Q13: What is ng-non-bindable in AngularJS?
+Ng-non-bindable specifies AngularJs to not compile the HTML element and its child nodes. For example:
+
+<title ng-non-bindable> </title>
+
+Q14: 
