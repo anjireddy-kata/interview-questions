@@ -35,3 +35,5 @@ guidelines for prioritizing decisions about the architecture in the future.
 real-world architecture consists of many different dimensions, including requirements around performance, reliability, security, operability, coding standards, and integration, to name a few. 
 
 Adding evolvability to existing architectures depends on three factors: component coupling, engineering practice maturity, and developer ease in crafting fitness functions.
+
+Understand the fragile places within your complex technology stack and automate protections via fitness functions.
