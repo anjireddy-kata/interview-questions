@@ -374,7 +374,9 @@ event represents a state change of the aggregate. An aggregate’s business logi
   * The Command query responsibility segregation (CQRS) pattern - This is more powerful than the API composition pattern, but it’s also more complex. It maintains one or more view databases whose sole purpose is to support queries
   
   API composition: Implement a query that retrieves data from several services by querying each service via its API and combining the results. 
-  The Command query responsibility segregation (CQRS) pattern: This is more powerful than the API composition pattern, but it’s also more complex. It maintains one or more view databases whose sole purpose is to support queries
+  The Command query responsibility segregation (CQRS) pattern: This is more powerful than the API composition pattern, but it’s also more complex. It maintains one or more view databases whose sole purpose is to support queries.
+  
+  234
 
 
 
