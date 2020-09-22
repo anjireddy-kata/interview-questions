@@ -303,6 +303,66 @@ OrderCommandHandlers - An inbound adapter that consumes command messages from a 
 Database Adapter - An outbound adapter that’s invoked by the business logic to access the database
 Domain Event Publishing Adapter - An outbound adapter that publishes events to a message broker
 
+**About Domain-driven design**
+**Entity** - An object that has a persistent identity. Two entities whose attributes have the same values are still different objects. In a Java EE application, classes
+that are persisted using JPA @Entity are usually DDD entities.
+**Value object** - An object that is a collection of values. Two value objects whose attributes have the same values can be used interchangeably. An example of a
+value object is a Money class, which consists of a currency and an amount
+**Factory** - An object or method that implements object creation logic that’s too complex to be done directly by a constructor. It can also hide the concrete classes that are instantiated. A factory might be implemented as a static method of a class
+**Repository**- An object that provides access to persistent entities and encapsulates the mechanism for accessing the database.
+**Service** - An object that implements business logic that doesn’t belong in an entity or a value object.
+
+An aggregate is a cluster of domain objects within a boundary that can be treated as a unit. It consists of a root entity and possibly one or more other entities and value objects. 
+
+**Aggregate rules**
+Rule 1: REFERENCE ONLY THE AGGREGATE ROOT
+Rule 2: INTER-AGGREGATE REFERENCES MUST USE PRIMARY KEYS
+Rule 3: ONE TRANSACTION CREATES OR UPDATES ONE AGGREGATE
+
+What is Domain Event?
+A domain event is a class with a name formed using a past-participle verb. It has properties that meaningfully convey the event. Each property is either a primitive value or a value object. For example, an OrderCreated event class has an orderId property.
+
+A domain event typically also has metadata, such as the event ID, and a timestamp. It might also have the identity of the user who made the change, because that’s useful
+for auditing. The metadata can be part of the event object, perhaps defined in a superclass. Alternatively, the event metadata can be in an envelope object that wraps
+the event object. The ID of the aggregate that emitted the event might also be part of the envelope rather than an explicit event property.
+
+event enrichment - Adding the required object/entity details to the the event itself.
+
+ Although event enrichment simplifies consumers, the drawback is that it risks making the event classes less stable. An event class potentially needs to change whenever
+the requirements of its consumers change. This can reduce maintainability because this kind of change can impact multiple parts of the application. Satisfying every consumer can also be a futile effort. Fortunately, in many situations it’s fairly obvious which properties to include in an event.
+
+Strategies for Identifying domain events
+ Event storming is an event-centric workshop format for understanding a complex domain. It involves gathering domain experts in a room, lots of sticky notes, and a very large surface—a whiteboard or paper roll—to stick the notes on. The result of event storming is an event-centric domain model consisting of aggregates and events.
+ 
+ Event storming consist of three main steps:
+ * Brainstorm events - Ask the domain experts to brainstorm the domain events. Domain events are represented by orange sticky notes that are laid out in a rough timeline on the modeling surface.
+ * Identify event triggers - Ask the domain experts to identify the trigger of each event, which is one of the following:
+    - User actions, represented as a command using a blue sticky note
+    - External system, represented by a purple sticky note
+    - Another domain event
+    - Passing of time
+ * Identify aggregates—Ask the domain experts to identify the aggregate that consumes each command and emits the corresponding event. Aggregates are represented by yellow sticky notes
+ 
+ **Generating and publishing domain events**
+ Conceptually, domain events are published by aggregates. An aggregate knows when its state changes and hence what event to publish. An aggregate could invoke a messaging API directly. The drawback of this approach is that because aggregates can’t use dependency injection, the messaging API would need to be passed around as a method argument. That would intertwine infrastructure concerns and business logic, which is extremely undesirable.
+ 
+ A better approach is to split responsibility between the aggregate and the service (or equivalent class) that invokes it. Services can use dependency injection to obtain a
+reference to the messaging API, easily publishing events. The aggregate generates the events whenever its state changes and returns them to the service.
+
+There are a couple of different ways an aggregate can return events back to the service. One option is for the return value of an aggregate method to include a list of events. 
+
+**Developing business logic using event sourcing**
+Event sourcing is a different way of structuring the business logic and persisting aggregates. It persists an aggregate as a sequence of events. Each event represents a state
+change of the aggregate. An application recreates the current state of an aggregate by replaying the events.
+
+Event sourcing has several important benefits. For example, it preserves the history of aggregates, which is valuable for auditing and regulatory purposes. And it reliably publishes domain events, which is particularly useful in a microservice architecture.
+
+Event sourcing is an event-centric technique for implementing business logic and persisting aggregates. An aggregate is stored in the database as a series of events. Each
+event represents a state change of the aggregate. An aggregate’s business logic is structured around the requirement to produce and consume these events.
+
+
+
+
 
 
 
