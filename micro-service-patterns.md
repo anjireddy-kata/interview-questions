@@ -215,7 +215,97 @@ In a brokerless architecture, services can exchange messages directly.
  When selecting a message broker, you have various factors to consider, including the following:
  * Supported programming languages—You probably should pick one that supports a variety of programming languages
  * Supported messaging standards—Does the message broker support any standards, such as AMQP and STOMP, or is it proprietary?
- * 
+ * Messaging ordering—Does the message broker preserve ordering of messages?
+ * Delivery guarantees—What kind of delivery guarantees does the broker make?
+ * Persistence—Are messages persisted to disk and able to survive broker crashes
+ * Durability—If a consumer reconnects to the message broker, will it receive the messages that were sent while it was disconnected
+ * Scalability—How scalable is the message broker
+ * Latency—What is the end-to-end latency?
+ * Competing consumers—Does the message broker support competing consumers
+ 
+ BENEFITS AND DRAWBACKS OF BROKER-BASED MESSAGING
+ ** benefits **
+ * Loose coupling
+ * Message buffering
+ * Flexible communication
+ * Explicit interprocess communication
+ 
+ ** Drawbacks **
+ * Potential performance bottleneck
+ * Potential single point of failure
+ * Additional operational complexity
+ 
+  **Transactional messaging**
+   For instance, throughout this book you see examples of services that publish domain events whenever they create or update business entities. Both the database update and the sending of the message must happen within a transaction. Otherwise, a service might update the database and then crash, for example, before sending the message. If the service doesn’t perform these two operations atomically, a failure could leave the system in an inconsistent state. The traditional solution is to use a distributed transaction that spans the database and the message broker. But as you’ll learn in chapter 4, distributed transactions aren’t a good choice for modern applications. Moreover, many modern brokers such as Apache Kafka don’t support distributed transactions.
+   
+USING A DATABASE TABLE AS A MESSAGE QUEUE
+
+Transactional outbox: Publish an event or message as part of a database transaction by saving it in an OUTBOX in the database. 
+PUBLISHING EVENTS BY USING THE POLLING PUBLISHER PATTERN
+
+
+PUBLISHING EVENTS BY APPLYING THE TRANSACTION LOG TAILING PATTERN
+A sophisticated solution is for MessageRelay to tail the database transaction log (also called the commit log). Every committed update made by an application is represented as an entry in the database’s transaction log. A transaction log miner can read the transaction log and publish each change as a message to the message broker.
+
+The Transaction Log Miner reads the transaction log entries. It converts each relevant log entry corresponding to an inserted message into a message and publishes that message to the message broker. This approach can be used to publish messages written to an OUTBOX table in an RDBMS or messages appended to records in a NoSQL database.
+
+Eliminating synchronous interaction
+* USE ASYNCHRONOUS INTERACTION STYLES
+* REPLICATE DATA
+
+**Using the Saga pattern to maintain data consistency**
+Sagas are mechanisms to maintain data consistency in a microservice architecture without having to use distributed transactions. You define a saga for each system command that needs to update data in multiple services. A saga is a sequence of local transactions. Each local transaction updates data within a single service using the familiar ACID transaction frameworks and libraries mentioned earlier.
+The completion of a local transaction triggers the execution of the next local transaction. 
+
+An important benefit of asynchronous messaging is that it ensures that all the steps of a saga are executed, even if one or more of the saga’s participants is temporarily unavailable.
+Sagas differ from ACID transactions in a couple of important ways. Each local transaction commits its changes, a saga must be rolled back using compensating transactions. 
+
+SAGAS USE COMPENSATING TRANSACTIONS TO ROLL BACK CHANGES
+
+**Coordinating sagas**
+A saga’s implementation consists of logic that coordinates the steps of the saga. When a saga is initiated by system command, the coordination logic must select and
+tell the first saga participant to execute a local transaction.Once that transaction completes, the saga’s sequencing coordination selects and invokes the next saga
+participant. This process continues until the saga has executed all the steps. If any local transaction fails, the saga must execute the compensating transactions in reverse order.
+
+* Choreography - Distribute the decision making and sequencing among the saga participants. They primarily communicate by exchanging events.
+* Orchestration - Centralize a saga’s coordination logic in a saga orchestrator class. A saga orchestrator sends command messages to saga participants telling them which operations to perform.
+
+Choreography-based sagas 
+One way you can implement a saga is by using choreography. When using choreography, there’s no central coordinator telling the saga participants what to do. Instead,
+the saga participants subscribe to each other’s events and respond accordingly. 
+
+Orchestration-based sagas
+Orchestration is another way to implement sagas. When using orchestration, you define an orchestrator class whose sole responsibility is to tell the saga participants
+what to do. The saga orchestrator communicates with the participants using command/async reply-style interaction.
+
+To execute a saga step, it sends a command message to a participant telling it what operation to perform. After the saga participant has performed the operation, it sends a reply message to the orchestrator. The orchestrator then processes the message and determines which saga step to perform next.
+
+MODELING SAGA ORCHESTRATORS AS STATE MACHINES
+A good way to model a saga orchestrator is as a state machine. A state machine consists of a set of states and a set of transitions between states that are triggered by
+events. Each transition can have an action, which for a saga is the invocation of a saga participant. 
+
+ The transitions between states are triggered by the completion of a local transaction performed by a saga participant. The current state and the specific outcome of the local transaction determine the state transition and what action, if any, to perform. 
+
+THE STRUCTURE OF A SAGA
+* Compensatable transactions - Transactions that can potentially be rolled back using a compensating transaction
+* Pivot transaction - The go/no-go point in a saga. If the pivot transaction commits, the saga will run until completion. A pivot transaction can be a transaction
+that’s neither compensatable nor retriable. Alternatively, it can be the last compensatable transaction or the first retriable transaction.
+* Retriable transactions - Transactions that follow the pivot transaction and are guaranteed to succeed.
+
+An aggregate is a cluster of objects that can be treated as a unit. 
+
+**Business logic organization patterns**
+the business logic is the core of a hexagonal architecture. Surrounding the business logic are the inbound and outbound adapters. An inbound adapter handles requests from clients and invokes the business logic. An outbound adapter, which is invoked by the business logic, invokes other services and applications.
+
+Typical order service consists of the business logic and the following adapters:
+REST API adapter - An inbound adapter that implements a REST API which invokes the business logic
+OrderCommandHandlers - An inbound adapter that consumes command messages from a message channel and invokes the business logic
+Database Adapter - An outbound adapter that’s invoked by the business logic to access the database
+Domain Event Publishing Adapter - An outbound adapter that publishes events to a message broker
+
+
+
+
  
    
     
