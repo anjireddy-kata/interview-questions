@@ -360,6 +360,23 @@ Event sourcing has several important benefits. For example, it preserves the his
 Event sourcing is an event-centric technique for implementing business logic and persisting aggregates. An aggregate is stored in the database as a series of events. Each
 event represents a state change of the aggregate. An aggregate’s business logic is structured around the requirement to produce and consume these events.
 
+![Event Sourcing](https://github.com/anji4246/interview-questions/blob/master/event%20sourcing.png)
+
+**Event sourcing and publishing events**
+* USING POLLING TO PUBLISH EVENTS
+* USING TRANSACTION LOG TAILING TO RELIABLY PUBLISH EVENTS
+
+ Using snapshots to improve performance
+ 
+ 
+  **Implementing query operations in a microservice architecture**
+  * The API composition pattern - This is the simplest approach and should be used whenever possible. It works by making clients of the services that own the data responsible for invoking the services and combining the results
+  * The Command query responsibility segregation (CQRS) pattern - This is more powerful than the API composition pattern, but it’s also more complex. It maintains one or more view databases whose sole purpose is to support queries
+  
+  API composition: Implement a query that retrieves data from several services by querying each service via its API and combining the results. 
+  The Command query responsibility segregation (CQRS) pattern: This is more powerful than the API composition pattern, but it’s also more complex. It maintains one or more view databases whose sole purpose is to support queries
+
+
 
 
 
