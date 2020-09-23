@@ -23,3 +23,11 @@
 ### Q23: Advantages of spring boot over structs 
 ### Q24: If you have a Java application with a database connection that needs to be improved, how would you improve it?  
 ### Q25: Distributed transactions and eventual consistency in microservices
+
+### Q26: What is the cloud native architecture?
+Cloud native is a capability of an application that utilizes the advantages of cloud computing to "build and run scalable applications in modern, dynamic environments such as public, private and hybrid clouds.
+
+Cloud native is all about the how applications are created and deployed and not about where. Cloud-native takes advantage of many modern techniques including PaaS, multicloud, microservices, agile methodology, containers, CI/CD and DevOps.
+
+### What is Minimum Viable Architecture?
+
