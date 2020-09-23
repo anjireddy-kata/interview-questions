@@ -376,7 +376,84 @@ event represents a state change of the aggregate. An aggregate’s business logi
   API composition: Implement a query that retrieves data from several services by querying each service via its API and combining the results. 
   The Command query responsibility segregation (CQRS) pattern: This is more powerful than the API composition pattern, but it’s also more complex. It maintains one or more view databases whose sole purpose is to support queries.
   
-  234
+ The benefits of CQRS
+ * Enables the efficient implementation of queries in a microservice architecture
+ * Enables the efficient implementation of diverse queries
+ * Makes querying possible in an event sourcing-based application
+ * Improves separation of concerns
+ 
+ Drawbacks of CQRS
+ * More complex architecture
+ * Dealing with the replication lag
+ 
+ **External API patterns**
+ API Gateway
+ 
+ IMPLEMENTING EDGE FUNCTIONS
+ Although an API gateway’s primary responsibilities are API routing and composition, it may also implement what are known as edge functions. An edge function is, as the name suggests, a request-processing function implemented at the edge of an application. 
+ 
+ * Authentication - Verifying the identity of the client making the request.
+ * Authorization - Verifying that the client is authorized to perform that particular operation
+ * Rate limiting - Limiting how many requests per second from either a specific client and/or from all clients
+ * Caching - Cache responses to reduce the number of requests made to the services
+ * Metrics collection - Collect metrics on API usage for billing analytics purposes
+ * Request logging - Log requests
+ 
+ API gateway Architecture
+ API gateway consists of two layers
+ * API layer
+ * common layer
+ 
+ The API layer consists of one or more independent API modules. Each API module implements an API for a particular client (Ex: Mobile API, browser API, Public API). 
+ The common layer implements shared functionality, including edge functions such as authentication.
+ 
+ An API module implements each API operation in one of two ways. Some API operations map directly to single service API operation. An API module implements these
+operations by routing requests to the corresponding service API operation. It might route requests using a generic routing module that reads a configuration file describing the routing rules.
+
+ An API module implements other, more complex API operations using API composition. The implementation of this API operation consists of custom code. Each API
+operation implementation handles requests by invoking multiple services and combining the results.
+
+**Implementing an API gateway**
+Responsibilities of an API gateway
+* Request routing
+* API Composition
+* Edge functions
+* Protocol translation
+
+There are a couple of different ways to implement an API gateway:
+* Using an off-the-shelf API gateway product/service: This option requires little or no development but is the least flexible. For example, an off-the-shelf API gateway typically does not support API composition
+* Developing your own API gateway using either an API gateway framework or a web framework as the starting point: This is the most flexible approach, though it requires
+some development effort.
+
+**Schema-driven API technologies**
+The two most popular graph-based API technologies are GraphQL and Netflix Falcor
+
+### Testing microservices
+A test case is a set of test inputs, execution conditions, and expected results developed for a particular objective, such as to exercise a particular program path or to verify compliance with a specific requirements.
+
+Each automated test is implemented by a test method, which belongs to a test class. A test consists of four phases: setup, which initializes the test fixture, which is everything required to run the test; execute, which invokes the SUT; verify, which verifies the outcome of the test; and teardown, which cleans up the test fixture.
+
+A test double is an object that simulates the behavior of the dependency.
+
+Replacing a dependency with a test double enables the SUT to be tested in isolation. The test is simpler and faster.
+
+There are two types of test doubles: stubs and mocks. The terms stubs and mocks are often used interchangeably, although they have slightly different behavior. A stub is a
+test double that returns values to the SUT. A mock is a test double that a test uses to verify that the SUT correctly invokes a dependency. Also, a mock is often a stub.
+
+THE DIFFERENT TYPES OF TESTS
+* Unit tests - Test a small part of a service, such as a class (Test the business logic) 
+* Integration tests - Verify that a service can interact with infrastructure services such as databases and other application services (Verify that a service communicates with its dependencies)
+* Component tests - Acceptance tests for an individual service - (Acceptance tests for a service)
+* End-to-end tests - Acceptance tests for the entire application - (Acceptance tests for an application)
+
+The test quadrant defines four different categories of tests:
+* Q1—Support programming/technology facing: unit and integration tests
+* Q2—Support programming/business facing: component and end-to-end test
+* Q3—Critique application/business facing: usability and exploratory testing
+* Q4—Critique application/technology facing: nonfunctional acceptance tests such as performance tests
+
+
+ 
 
 
 
