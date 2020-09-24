@@ -28,6 +28,13 @@
 Cloud native is a capability of an application that utilizes the advantages of cloud computing to "build and run scalable applications in modern, dynamic environments such as public, private and hybrid clouds.
 
 Cloud native is all about the how applications are created and deployed and not about where. Cloud-native takes advantage of many modern techniques including PaaS, multicloud, microservices, agile methodology, containers, CI/CD and DevOps.
-
 ### What is Minimum Viable Architecture?
+
+### From an organizational capabilities perspective, there are a number of components within a firm that must be supported through an EA framework
+* Business Architecture -what the firm does
+* The Data domain - the data managed by the firm
+* Applications domain - the software used
+* Infrastructure domain - the networks, and physical devices used
+* Security Architecture - The Security of the firm’s enterprise architecture; and
+* Compliance Architecture - The Compliance requirements of the firm (e.g., GDPR).
 
