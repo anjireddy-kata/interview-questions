@@ -105,6 +105,16 @@ In this context, the TOGAF ADM can be regarded as describing a process lifecycle
 
 ![Architecture Repository](https://github.com/anji4246/interview-questions/blob/master/Architecture%20Repository.png)
 
+The major components within an Architecture Repository are as follows:
+* **The Architecture Metamodel** describes the organizationally tailored application of an architecture framework, including a metamodel for architecture content.
+* **The Architecture Capability** defines the parameters, structures, and processes that support governance of the Architecture Repository
+* **The Architecture Landscape** shows an architectural view of the building blocks that are in use within the organization today (e.g., a list of the live applications). The landscape is likely to exist at multiple levels of abstraction to suit different architecture objectives.
+* **The Standards Information Base (SIB)** captures the standards with which new architectures must comply, which may include industry standards, selected products and services from suppliers, or shared services already deployed within the organization
+* **The Reference Library** provides guidelines, templates, patte ns, and other forms of reference material that can be leveraged in order to accelerate the creation of new
+architectures for the enterprise
+**The Governance Log** provides a record of governance activity across the enterprise.
+
+
 
 
 
