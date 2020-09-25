@@ -82,17 +82,16 @@ The TOGAF Architecture Development Method (ADM) provides a tested and repeatable
 
 Phases within the ADM are as follows:
 The Preliminary Phase describes the preparation and initiation activities required to prepare to meet the business directive for a new enterprise architecture, including the definition of an Organization-Specific Architecture framework and the definition of principles.
-**Phase A: Architecture Vision:** describes the initial phase of an architecture development cycle. It includes infor mation about defining the scope, identifying the stakeholders, creating the Architecture Vision, and obtaining approvals.
 
-**Phase B: : Business Architecture** describes the development of a Business Architecture to support an agreed Architecture Vision.
-**Phase C: Information Systems Architectures:** describes the development of Information Systems Architectures for an architecture project, including the development of Data and Application Architectures.
-
-**Phase D: Technology Architecture:** describes the development of the Technology Architecture for an architecture project.
-**Phase E: Oppor tunities & Solutions:** conducts initial implementation planning and the identification of deliver y vehicles for the architecture defined in the previous phases.
-**Phase F: Migration Planning:** addresses the for mulation of a set of detailed sequence of transition architectures with a supporting Implementation and Migration Plan.
-**Phase G: Implementation Governance:** provides an architectural oversight of the implementation.
-**Phase H:  Architecture Change Management:** establishes procedures for managing change to the new architecture.
-**Requirements Management:** examines the process of managing architecture requirements throughout the ADM.
+* **Phase A: Architecture Vision:** describes the initial phase of an architecture development cycle. It includes infor mation about defining the scope, identifying the stakeholders, creating the Architecture Vision, and obtaining approvals.
+* **Phase B: : Business Architecture** describes the development of a Business Architecture to support an agreed Architecture Vision.
+* **Phase C: Information Systems Architectures:** describes the development of Information Systems Architectures for an architecture project, including the development of Data and Application Architectures.
+* **Phase D: Technology Architecture:** describes the development of the Technology Architecture for an architecture project.
+* **Phase E: Opportunities & Solutions:** conducts initial implementation planning and the identification of delivery vehicles for the architecture defined in the previous phases.
+* **Phase F: Migration Planning:** addresses the for mulation of a set of detailed sequence of transition architectures with a supporting Implementation and Migration Plan.
+* **Phase G: Implementation Governance:** provides an architectural oversight of the implementation.
+* **Phase H:  Architecture Change Management:** establishes procedures for managing change to the new architecture.
+* **Requirements Management:** examines the process of managing architecture requirements throughout the ADM.
 
 
 
