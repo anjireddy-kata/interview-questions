@@ -61,8 +61,14 @@ Organizations seeking Boundaryless Infor mation Flow can use TOGAF to define and
 Organizations that design and implement enterprise architectures using TOGAF are assured of a design and a procurement specification that can facilitate an open systems implementation, thus enabling the benefits of open systems with reduced risk.
 
 ### What is TOGAF?
-TOGAF is an architecture framework — The Open Group Architecture Framework. TOGAF provides the methods and tools for assisting in the acceptance, production, use, and maintenance of an enterprise architecture. It is based on an iterative process model supported
-by best practices and a re-usable set of existing architecture assets.
+TOGAF is an architecture framework — The Open Group Architecture Framework. TOGAF provides the methods and tools for assisting in the acceptance, production, use, and maintenance of an enterprise architecture. It is based on an iterative process model supported by best practices and a re-usable set of existing architecture assets.
+
+### What is Architecture in the Context of TOGAF?
+
+A formal description of a system, or a detailed plan of the system at component level to guide its implementation.
+The structure of components, their inter-relationships, and the principles and guidelines governing their design and evolution over time
+
+
 
 
 
