@@ -93,6 +93,19 @@ The Preliminary Phase describes the preparation and initiation activities requir
 * **Phase H:  Architecture Change Management:** establishes procedures for managing change to the new architecture.
 * **Requirements Management:** examines the process of managing architecture requirements throughout the ADM.
 
+### Enterprise Continuum
+TOGAF includes the concept of the Enterprise Continuum, which sets the broader context for an architect and explains how generic solutions can be leveraged and specialized in order to support the requirements of an individual organization. The Enterprise Continuum is a view of the Architecture Repository that provides methods for classifying architecture and solution artifacts as they evolve from generic Foundation Architectures to Organization-Specific Architectures.
+
+### Architecture Repository
+Suppor ting the Enterprise Continuum is the concept of an Architecture Repository which can be used to store different classes of architectural output at different levels of abstraction, created by the ADM. In this way, TOGAF facilitates understanding and co-operation between stakeholders and practitioners at different levels.
+
+By means of the Enterprise Continuum and Architecture Repository, architects are encouraged to leverage all other relevant architectural resources and assets in developing an OrganizationSpecific Architecture.
+
+In this context, the TOGAF ADM can be regarded as describing a process lifecycle that operates at multiple levels within the organization, operating within a holistic governance framework and producing aligned outputs that reside in an Architecture Repository. The Enterprise Continuum provides a valuable context for understanding architectural models: it shows building blocks and their relationships to each other, and the constraints and requirements on a cycle of architecture development.
+
+
+
+
 
 
 
