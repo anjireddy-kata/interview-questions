@@ -103,6 +103,8 @@ By means of the Enterprise Continuum and Architecture Repository, architects are
 
 In this context, the TOGAF ADM can be regarded as describing a process lifecycle that operates at multiple levels within the organization, operating within a holistic governance framework and producing aligned outputs that reside in an Architecture Repository. The Enterprise Continuum provides a valuable context for understanding architectural models: it shows building blocks and their relationships to each other, and the constraints and requirements on a cycle of architecture development.
 
+![Architecture Repository](https://github.com/anji4246/interview-questions/blob/master/Architecture%20Repository.png)
+
 
 
 
