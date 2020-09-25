@@ -68,6 +68,34 @@ TOGAF is an architecture framework — The Open Group Architecture Framework. TO
 A formal description of a system, or a detailed plan of the system at component level to guide its implementation.
 The structure of components, their inter-relationships, and the principles and guidelines governing their design and evolution over time
 
+### What Kind of Architecture Does TOGAF Deal With?
+There are four architecture domains that are commonly accepted as subsets of an overall enter prise architecture, all of which TOGAF is designed to support:
+
+* Business Architecture - defines the business strategy, governance, organization, and key business processes
+* Data Architecture -  structure of an organization’s logical and physical data assets and data management resources
+* Application Architecture - provides a blueprint for the individual application systems to be deployed, their interactions, and their relationships to the core business processes of the organization
+* Technology Architecture - descr ibes the logical software and hardware capabilities that are required to support the deployment of business, data, and application services.
+This includes IT infrastr ucture, middleware, networ ks, communications, processing, standards, etc.
+
+### Architecture Development Method (ADM)
+The TOGAF Architecture Development Method (ADM) provides a tested and repeatable process for developing architectures. The ADM includes establishing an architecture framework, developing architecture content, transitioning, and governing the realization of architectures.
+
+Phases within the ADM are as follows:
+The Preliminary Phase describes the preparation and initiation activities required to prepare to meet the business directive for a new enterprise architecture, including the definition of an Organization-Specific Architecture framework and the definition of principles.
+**Phase A: Architecture Vision:** describes the initial phase of an architecture development cycle. It includes infor mation about defining the scope, identifying the stakeholders, creating the Architecture Vision, and obtaining approvals.
+
+**Phase B: : Business Architecture** describes the development of a Business Architecture to support an agreed Architecture Vision.
+**Phase C: Information Systems Architectures:** describes the development of Information Systems Architectures for an architecture project, including the development of Data and Application Architectures.
+
+**Phase D: Technology Architecture:** describes the development of the Technology Architecture for an architecture project.
+**Phase E: Oppor tunities & Solutions:** conducts initial implementation planning and the identification of deliver y vehicles for the architecture defined in the previous phases.
+**Phase F: Migration Planning:** addresses the for mulation of a set of detailed sequence of transition architectures with a supporting Implementation and Migration Plan.
+**Phase G: Implementation Governance:** provides an architectural oversight of the implementation.
+**Phase H:  Architecture Change Management:** establishes procedures for managing change to the new architecture.
+**Requirements Management:** examines the process of managing architecture requirements throughout the ADM.
+
+
+
 
 
 
