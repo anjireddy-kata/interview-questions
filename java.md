@@ -82,7 +82,7 @@ Q12: What is difference between fail-fast and fail-safe?
 Iterator fail-safe property work with the clone of underlying collection, hence it’s not affected by any modification in the collection. By design, all the collection classes in java.util package are fail-fast whereas collection classes in java.util.concurrent are fail-safe.
 Fail-fast iterators throw ConcurrentModificationException whereas fail-safe iterator never throws ConcurrentModificationException.
 
-Q13: What is the difference between Process and Thread?
+Q13 : What is the difference between Process and Thread?
 Ans: A process is a self contained execution environment and it can be seen as a program or application whereas Thread is a single task of execution within the process. Java runtime environment runs as a single process which contains different classes and programs as processes. Thread can be called lightweight process. Thread requires less resources to create and exists in the process, thread shares the process resources.
 
 Q14: What is context-switching in multi-threading?
