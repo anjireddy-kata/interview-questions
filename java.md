@@ -87,3 +87,39 @@ Ans: A process is a self contained execution environment and it can be seen as a
 
 Q14: What is context-switching in multi-threading?
 Context Switching is the process of storing and restoring of CPU state so that Thread execution can be resumed from the same point at a later point of time. Context Switching is the essential feature for multitasking operating system and support for multi-threaded environment.
+
+### Q15: What are all the Classes and Interfaces that are available in the collections?
+Given below are the Classes and Interfaces that are available in Collections:
+
+Interfaces:
+
+Collection
+List
+Set
+Map
+Sorted Set
+Sorted Map
+Queue
+Classes:
+
+Lists:
+Array List
+Vector
+Linked List
+Sets:
+
+Hash set
+Linked Hash Set
+Tree Set
+Maps:
+
+Hash Map
+Hash Table
+TreeMap
+Linked Hashed Map
+Queue:
+
+Priority Queue
+
+https://www.softwaretestinghelp.com/core-java-interview-questions/
+
