@@ -130,4 +130,17 @@ A platform is a combination of all the AWS Beanstalk components, an Operating sy
 https://intellipaat.com/blog/what-is-elastic-beanstalk-in-aws/
 
 
+### Q16: What is AWS Step Functions?
+AWS Step Functions is a service provided by Amazon Web Services that makes it easier to orchestrate multiple AWS services to accomplish tasks. Step Functions allows you to create steps in a process where the output of one step becomes the input for another step, all using a visual workflow editor.
+
+https://mindmajix.com/aws-elastic-beanstalk
+
+https://www.serverless.com/aws-step-functions
+
+### What is the default timeout of AWS lambda function?
+The complete execution has to take place within 300 seconds from placing the calls to AWS Lambda. 3 seconds is the default timeout however you can set any timeout value between 1 to 300 seconds
+
+
+
+
 
