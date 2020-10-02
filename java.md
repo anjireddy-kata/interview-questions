@@ -217,7 +217,7 @@ Streams are traversable only once. If you traverse the stream once, it is said t
 
 Collections are eagerly constructed i.e all the elements are computed at the beginning itself. But, streams are lazily constructed i.e intermediate operations are not evaluated until terminal operation is invoked.
 
-
+![Collections vs Streams](https://github.com/anji4246/interview-questions/blob/master/Collections-Vs-Streams.png)
 
 
 https://www.softwaretestinghelp.com/core-java-interview-questions/
