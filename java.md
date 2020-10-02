@@ -121,5 +121,104 @@ Queue:
 
 Priority Queue
 
+### What is try-with-resources in java?
+One of the Java 7 features is the try-with-resources statement for automatic resource management. Before Java 7, there was no auto resource management and we should explicitly close the resource. Usually, it was done in the finally block of a try-catch statement. This approach used to cause memory leaks when we forgot to close the resource.
+
+### What is static block?
+Java static block is the group of statements that gets executed when the class is loaded into memory by Java ClassLoader. It is used to initialize static variables of the class. Mostly it’s used to create static resources when class is loaded.
+
+class JavaExample{
+   static int num;
+   static String mystr;
+   static{
+      num = 97;
+      mystr = "Static keyword in Java";
+   }
+   public static void main(String args[])
+   {
+      System.out.println("Value of num: "+num);
+      System.out.println("Value of mystr: "+mystr);
+   }
+}
+
+### Difference between Set, List and Map in Java
+The Set interface provides an unordered collection of unique objects, i.e. Set doesn't allow duplicates, while Map provides a data structure based on key-value pair and hashing.
+
+All three List, Set, and Map are interfaces in Java and there are many concrete implementations of them are available in Collection API. ArrayList and LinkedList are two most popular used List implementation while LinkedHashSet, TreeSet, and HashSet are frequently used Set implementation. 
+
+* Duplicate Objects
+The main difference between List and Set interface in Java is that List allows duplicates while Set doesn't allow duplicates.
+While a Map holds two objects per Entry e.g. a key and a value and It may contain duplicate values but keys are always unique.
+
+* Order 
+Another key difference between List and Set is that List is an ordered collection, List's contract maintains insertion order or element. Set is an unordered collection, you get no guarantee on which order element will be stored. 
+
+Though some of the Set implementation e.g. LinkedHashSet maintains order. Also SortedSet and SortedMap e.g. TreeSet and TreeMap maintain a sorting order, imposed by using Comparator or Comparable.
+
+* Null elements
+
+The list allows null elements and you can have many null objects in a List because it also allowed duplicates. Set just allow one null element as there is no duplicate permitted while in Map you can have null values and at most one null key. 
+
+Worth noting is that Hashtable doesn't allow null key or values but HashMap allows null values and one null key.  This is also the main difference between these two popular implementations of Map interface, aka HashMap vs Hashtable. 
+
+### CompareTo vs equals
+compareTo in Java is in the same league of equals() and hashcode() and used to implement natural order of object, compareTo is slightly different to compare() method of Comparator interface which is used to implement custom sorting order.
+
+**What is the compareTo() method in Java**
+compareTo() method is defined in interface java.lang.Comparable and it is used to implement natural sorting on java classes. natural sorting means the sort order which naturally applies on object e.g. lexical order for String, numeric order for Integer or Sorting employee by there ID, etc. most of the java core classes including String and Integer implements CompareTo() method and provide natural sorting.
+
+Since we store java objects in Collection there are also certain Set and Map which provides automating sorting when you insert element on that e.g. TreeSet and TreeMap. to implement sorting you need to override either compareTo(Object o) method or Comparable class or compare(Object o1, Object o2) method of Comparator class. 
+
+Most of the classes implement Comparable to implement natural order. for example if you are writing Employee object you probably want to implement Comparable interface and override compareTo() method to compare current employee with other employees based on ID. 
+
+### How to implement CompareTo in Java?
+There are certain rules and important points to remember while overriding compareTo method:
+1) CompareTo method must return negative number if current object is less than other object, positive number if current object is greater than other object and zero if both objects are equal to each other.
+
+2) CompareTo must be in consistent with equals method e.g. if two objects are equal via equals() , there compareTo() must return zero otherwise if those objects are stored in SortedSet or SortedMap they will not behave properly. Since SortedSet or SortedMap use compareTo() to check the object if two unequal object are returned equal by compareTo those will not be added into Set or Map if they are not using external Comparator.
+
+3) CompareTo() must throw NullPointerException if current object get compared to null object as opposed to equals() which return false on such scenario.
+4) Another important point to note is don't use subtraction for comparing integral values because result of subtraction can overflow as every int operation in Java is modulo 2^32. use either Integer.compareTo()  or logical operators for comparison. 
+
+5) Use relational operator to compare integral numeric value i.e. < or > but use Float.compareTo() or Double.compareTo() to compare floating point number as relational operator doesn't obey contract of compareTo for floating point numbers.
+
+6) CompareTo() method is for comparison so order in which you compare two object matters. If you have more than one significant field to compare than always start comparing from most significant field to least significant field. 
+
+7) Another important point while comparing String using compareTo is to consider case. just like equals() doesn't consider case, compareTo also do not consider case, if you want to compare regardless of case than use String.compareToIgnoreCase()
+
+### Difference between Enumeration and Iterator?
+Enumeration and Iterator are two interfaces in java.util package which are used to traverse over the elements of a Collection object. Though they perform the same function i.e traversing the Collection object, there are some differences exist between them. Using Enumeration, you can only traverse the Collection object. But using Iterator, you can also remove an element while traversing the Collection. This is the one major difference between Enumeration and Iterator in java. You can say Iterator is some what advanced version of Enumeration. 
+
+**Iterator**
+* hasNext()
+* next()
+* remove()
+
+**Enumerator**
+* hasMoreElements()
+* nextElement()
+
+Enumeration is a legacy interface used to traverse only the legacy classes like Vector, HashTable and Stack. Where as Iterator is not a legacy code which is used to traverse most of the classes in the collection framework. For example, ArrayList, LinkedList, HashSet, LinkedHashSet, TreeSet, HashMap, LinkedHashMap, TreeMap etc
+
+Fail-Fast Vs Fail-Safe: Iterator is a fail-fast in nature. i.e it throws ConcurrentModificationException if a collection is modified while iterating other than it’s own remove() method. Where as Enumeration is fail-safe in nature. It doesn’t throw any exceptions if a collection is modified while iterating.
+
+As Iterator is fail-fast in nature and doesn’t allow modification of a collection by other threads while iterating, it is considered as safe and secure than Enumeration.
+
+### Difference Between Collections And Streams In Java?
+Collections and Streams, both are conceptually two different things which are used for two different purposes. If the collections are used to store the data then the streams are used to perform operations on that data.
+
+Collections are used to store and group the data in a particular data structure like List, Set or Map. But, streams are used to perform complex data processing operations like filtering, matching, mapping etc on stored data such as arrays, collections or I/O resources. That means, collections are mainly about data and streams are mainly about operations on data.
+
+You can add to or remove elements from collections. But, you can’t add to or remove elements from streams. Stream consumes a source, performs operations on it and returns a result. They don’t modify even the source also.
+
+The main specialty of Java 8 Streams is that you need not to worry about iteration while using streams. Streams perform iteration internally behind the scene for you. You just have to mention the operations to be performed on a source. (External Iteration vs Internal Iteration)
+
+Streams are traversable only once. If you traverse the stream once, it is said to be consumed. To traverse it again, you have to get new stream from the source again. But, collections can be traversed multiple times.
+
+Collections are eagerly constructed i.e all the elements are computed at the beginning itself. But, streams are lazily constructed i.e intermediate operations are not evaluated until terminal operation is invoked.
+
+
+
+
 https://www.softwaretestinghelp.com/core-java-interview-questions/
 
