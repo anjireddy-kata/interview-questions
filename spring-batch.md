@@ -35,3 +35,9 @@ top of Infrastructure layer.
 * Parallel processing of many different batch or jobs at the same time.
 * Partitioning (processing of many instances of the same job at the same time).
 * A combination of the above.
+
+### What are the important features of Spring Batch?
+**Restorability**: Restart a batch program from where it failed
+**Different Readers and Writers** : Provides great support to read from text files, csv, JMS, JDBC, Hibernate, iBatis etc. It can write to JMS, JDBC, Hibernate, files and many more.
+**Chunk Processing** : If we have 1 Million records to process, these can be processed in configurable chunks (1000 at a time or 10000 at a time).
+**Easy to implement proper transaction management even when using chunk processing.**
