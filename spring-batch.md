@@ -36,8 +36,27 @@ top of Infrastructure layer.
 * Partitioning (processing of many instances of the same job at the same time).
 * A combination of the above.
 
-### What are the important features of Spring Batch?
+### Q6: What are the important features of Spring Batch?
 **Restorability**: Restart a batch program from where it failed
 **Different Readers and Writers** : Provides great support to read from text files, csv, JMS, JDBC, Hibernate, iBatis etc. It can write to JMS, JDBC, Hibernate, files and many more.
 **Chunk Processing** : If we have 1 Million records to process, these can be processed in configurable chunks (1000 at a time or 10000 at a time).
 **Easy to implement proper transaction management even when using chunk processing.**
+
+### Q7: Explain parallel processing in Spring Batch Framework
+Parallel processing enables multiple batch runs jobs to run in parallel to reduce the total elapsed batch processing time. Parallel processing is simpler as long as the same file or database table is not shared among the processes otherwise the processes should process partitioned data.
+
+Another approach would be using a control table for maintaining interdependencies and to track each shared resource in use by any process or not.
+
+Other key issues in parallel processing include load balancing and the availability of general system resources such as files, database buffer pools etc. Also note that the control table itself can easily become a critical resource.
+
+### Q8: What is ItemReader in Spring batch framework?
+ItemReader is an abstraction that represents the retrieval of input for a Step, one item/row/record at a time. When the ItemReader has exhausted the items it can provide, it will indicate this by returning null.
+
+### Q9: What is ItemWriter in Spring batch framework?
+ItemWriter is an abstraction that represents the output of a Step, one batch or chunk of items at a time. Generally, an item writer has no knowledge of the input it will receive next, only the item that was passed in its current invocation.
+
+### Q10: What is ItemProcessor?
+ItemProcessor is an abstraction that represents the business processing of an item. While the ItemReader reads one item, and the ItemWriter writes them, the ItemProcessor provides access to transform or apply other business processing. If, while processing the item, it is determined that the item is not valid, returning null indicates that the item should not be written out.
+
+
+
