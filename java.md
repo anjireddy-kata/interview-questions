@@ -222,3 +222,6 @@ Collections are eagerly constructed i.e all the elements are computed at the beg
 
 https://www.softwaretestinghelp.com/core-java-interview-questions/
 
+https://stackify.com/streams-guide-java-8/
+
+
