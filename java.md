@@ -217,7 +217,26 @@ Streams are traversable only once. If you traverse the stream once, it is said t
 
 Collections are eagerly constructed i.e all the elements are computed at the beginning itself. But, streams are lazily constructed i.e intermediate operations are not evaluated until terminal operation is invoked.
 
+
 ![Collections vs Streams](https://github.com/anji4246/interview-questions/blob/master/Collection-Vs-Streams.png)
+
+
+### What are the states of the object in hibernate?
+There are 3 states of the object (instance) in hibernate.
+
+Transient: The object is in a transient state if it is just created but has no primary key (identifier) and not associated with a session.
+Persistent: The object is in a persistent state if a session is open, and you just saved the instance in the database or retrieved the instance from the database.
+Detached: The object is in a detached state if a session is closed. After detached state, the object comes to persistent state if you call lock() or update() method.
+
+### What is the difference between first level cache and second level cache?
+**First Level Cache**
+First Level Cache is associated with Session.
+It is enabled by default.
+
+**Second Level Cache**
+Second Level Cache is associated with SessionFactory.
+It is not enabled by default.
+
 
 
 https://www.softwaretestinghelp.com/core-java-interview-questions/
