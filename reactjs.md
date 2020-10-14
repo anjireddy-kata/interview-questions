@@ -462,3 +462,24 @@ PropTypes.any
      }
      ```
 https://yourstory.com/mystory/flux-vs-redux?utm_pageloadtype=scroll
+
+### Flux Architecture
+The Flux architecture is based on the following components
+* Store/ Stores: Serves as a container for the app state & logic
+* Action: Enables data passing to the dispatcher
+* View: Same as the view in MVC architecture, but in the context of React components
+* Dispatcher – Coordinates actions & updates to stores
+
+View -> Action -> Dispatcher -> Store(s) -> View
+
+### REDUX Architecture
+The REDUX architecture is based on the following components
+* Centralized store: Holds a state object that denotes the state of the entire app
+* Action: Enables data passing to the dispatcher
+* View: Same as the view in MVC architecture, but in the context of React components
+* Reducer: Logic that decides how your data changes exist in pure functions
+
+View -> Actions -> Reducer -> Store -> View
+
+In Redux architecture, application event is denoted as an Action, which is dispatched to the reducer, the pure function. Then reducer updates the centralized store with new data based on the kind of action it receives. Store creates a new state and sends an update to view. At that time, the view was recreated to reflect the update.
+
