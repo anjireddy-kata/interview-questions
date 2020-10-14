@@ -483,3 +483,7 @@ View -> Actions -> Reducer -> Store -> View
 
 In Redux architecture, application event is denoted as an Action, which is dispatched to the reducer, the pure function. Then reducer updates the centralized store with new data based on the kind of action it receives. Store creates a new state and sends an update to view. At that time, the view was recreated to reflect the update.
 
+### https://www.digitalocean.com/community/tutorials/js-finally-understand-reduce
+
+
+
