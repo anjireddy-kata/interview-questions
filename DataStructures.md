@@ -26,4 +26,8 @@ The first non-repeating character in the string is D
 
 https://www.techiedelight.com/find-first-non-repeating-character-string-one-traversal/ 
 
+# Q3: For a given source string and a target string, you should output the first index(from 0) of target string in source string. If target does not exist in source, just return -1 .
+
+ if source="source" and target = "target", return -1
+ if source = "abcdabcdefg" and target="bcd" then return 1
  
