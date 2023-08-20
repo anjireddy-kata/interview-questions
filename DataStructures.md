@@ -89,3 +89,4 @@ References:
 https://github.com/bollwarm/DataStructuresAlgorithms
 https://github.com/radojicic23/dsa-for-absolute-dummies/tree/master
 https://github.com/Prince-1501/Complete-DSA-Preparation
+https://www.techiedelight.com/greedy-algorithm-problems/
