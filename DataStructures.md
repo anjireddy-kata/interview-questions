@@ -51,8 +51,37 @@ For example, if the string is ABCDBAGHCHFAC and k = 3, the output would be 'D', 
 
 https://www.techiedelight.com/first-k-non-repeating-characters-string/
 
-# Q7: 
+# Q7: Find the minimum index of a repeating element in an array
+
+Input:  { 5, 6, 3, 4, 3, 6, 4 }
+Output: The minimum index of the repeating element is 1
+
+Input:  { 1, 2, 3, 4, 5, 6 }
+Output: Invalid Input
+https://www.techiedelight.com/find-minimum-index-repeating-element-array/
 
 
-# Q7: 
+# Q8: Recursive solution to sort a stack
+Given a stack, sort it using recursion. The use of any other data structures (like containers in STL or Collections in Java) is not allowed.
+https://www.techiedelight.com/recursive-solution-sort-stack/
+
+# Q9: Reverse text without reversing individual words
+Given a line of text, reverse the text without reversing the individual words.
+https://www.techiedelight.com/reverse-text-without-reversing-individual-words/
+
+# Q10: Find duplicate parenthesis in an expression.
+Input:  ((x+y))+z
+Output: true
+Explanation: Duplicate () found in subexpression ((x+y))
+https://www.techiedelight.com/find-duplicate-parenthesis-expression/
+
+# Q11: Check if an expression is balanced or not
+Given a string containing opening and closing braces, check if it represents a balanced expression or not.
+{[{}{}]}[()], {{}{}}, []{}() are balanced expressions.
+ 
+{()}[), {(}) are not balanced.
+https://www.techiedelight.com/check-given-expression-balanced-expression-not/
+# Q12: Inorder Tree Traversal
+https://www.techiedelight.com/inorder-tree-traversal-iterative-recursive/
+
  
