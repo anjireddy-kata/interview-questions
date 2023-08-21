@@ -525,3 +525,228 @@ class Main
     }
 }
 ```
+# SET - 4
+### Q7: Construct the longest palindrome by shuffling or deleting characters from a string
+Input:  ABBDAB
+Output: The longest palindrome is BABAB (or BADAB or ABBBA or ABDBA)
+ 
+Input:  ABCDD
+Output: The longest palindrome is DAD (or DBD or DCD)
+
+```
+import java.util.HashMap;
+import java.util.Map;
+ 
+class Main
+{
+    // Construct the longest palindrome by shuffling or deleting
+    // characters from a given string
+    public static String longestPalindrome(String str)
+    {
+        // base case
+        if (str == null || str.length() == 0) {
+            return str;
+        }
+ 
+        // create a frequency map for characters of a given string
+        Map<Character, Integer> freq = new HashMap<>();
+        for (char ch: str.toCharArray()) {
+            freq.put(ch, freq.getOrDefault(ch, 0) + 1);
+        }
+ 
+        String mid_char = "";                  // stores odd character
+        StringBuilder left = new StringBuilder();   // stores left substring
+ 
+        // iterate through the frequency map
+        for (var entry: freq.entrySet())
+        {
+            char ch = entry.getKey();               // get current character
+            int count = entry.getValue();           // get character frequency
+ 
+            // if the current character's frequency is odd,
+            // update mid to current char (and discard the old one)
+            if (count % 2 == 1) {
+                mid_char = String.valueOf(ch);
+            }
+ 
+            // append half of the characters to the left substring
+            // (the other half goes to the right substring in reverse order)
+            left.append(String.valueOf(ch).repeat(count / 2));
+        }
+ 
+        // the right substring will be the reverse of the left substring
+        StringBuilder right = new StringBuilder(left).reverse();
+ 
+        // return string formed by the left substring, mid-character (if any),
+        // and the right substring
+        return ("" + left + mid_char + right);
+    }
+ 
+    public static void main(String[] args)
+    {
+        String str = "ABBDAB";
+        System.out.print("The longest palindrome is " + longestPalindrome(str));
+    }
+}
+
+```
+### Q8: Search a given key in BST – Iterative and Recursive Solution
+
+```
+// A class to store a BST node
+class Node
+{
+    int data;
+    Node left = null, right = null;
+ 
+    Node(int data) {
+        this.data = data;
+    }
+}
+ 
+class Main
+{
+    // Recursive function to insert a key into a BST
+    public static Node insert(Node root, int key)
+    {
+        // if the root is null, create a new node and return it
+        if (root == null) {
+            return new Node(key);
+        }
+ 
+        // if the given key is less than the root node, recur for the left subtree
+        if (key < root.data) {
+            root.left = insert(root.left, key);
+        }
+ 
+        // if the given key is more than the root node, recur for the right subtree
+        else {
+            root.right = insert(root.right, key);
+        }
+ 
+        return root;
+    }
+ 
+    // Recursive function to search in a given BST
+    public static void search(Node root, int key, Node parent)
+    {
+        // if the key is not present in the key
+        if (root == null)
+        {
+            System.out.println("Key not found");
+            return;
+        }
+ 
+        // if the key is found
+        if (root.data == key)
+        {
+            if (parent == null) {
+                System.out.println("The node with key " + key + " is root node");
+            }
+ 
+            else if (key < parent.data)
+            {
+                System.out.println("The given key is the left node of the node " +
+                            "with key " + parent.data);
+            }
+            else {
+                System.out.println("The given key is the right node of the node " +
+                            "with key " + parent.data);
+            }
+ 
+            return;
+        }
+ 
+        // if the given key is less than the root node, recur for the left subtree;
+        // otherwise, recur for the right subtree
+ 
+        if (key < root.data) {
+            search(root.left, key, root);
+        }
+        else {
+            search(root.right, key, root);
+        }
+    }
+ 
+    public static void main(String[] args)
+    {
+        int[] keys = { 15, 10, 20, 8, 12, 16, 25 };
+ 
+        Node root = null;
+        for (int key: keys) {
+            root = insert(root, key);
+        }
+ 
+        search(root, 25, null);
+    }
+}
+```
+
+# SET 5
+### Q9: Coin change-making problem
+Given an unlimited supply of coins of given denominations, find the minimum number of coins required to get the desired change.
+For example, consider S = { 1, 3, 5, 7 }.
+f the desired change is 15, the minimum number of coins required is 3
+ 
+(7 + 7 + 1) or (5 + 5 + 5) or (3 + 5 + 7)
+ 
+ 
+If the desired change is 18, the minimum number of coins required is 4
+ 
+(7 + 7 + 3 + 1) or (5 + 5 + 5 + 3) or (7 + 5 + 5 + 1)
+```
+class Main
+{
+    // Function to find the minimum number of coins required
+    // to get a total of `target` from set `S`
+    public static int findMinCoins(int[] S, int target)
+    {
+        // if the total is 0, no coins are needed
+        if (target == 0) {
+            return 0;
+        }
+ 
+        // return infinity if total becomes negative
+        if (target < 0) {
+            return Integer.MAX_VALUE;
+        }
+ 
+        // initialize the minimum number of coins needed to infinity
+        int coins = Integer.MAX_VALUE;
+ 
+        // do for each coin
+        for (int c: S)
+        {
+            // recur to see if the total can be reached by including current coin `c`
+            int result = findMinCoins(S, target - c);
+ 
+            // update the minimum number of coins needed if choosing the current
+            // coin resulted in a solution
+            if (result != Integer.MAX_VALUE) {
+                coins = Integer.min(coins, result + 1);
+            }
+        }
+ 
+        // return the minimum number of coins needed
+        return coins;
+    }
+ 
+    public static void main(String[] args)
+    {
+        // coins of given denominations
+        int[] S = { 1, 3, 5, 7 };
+ 
+        // total change required
+        int target = 18;
+ 
+        int coins = findMinCoins(S, target);
+        if (coins != Integer.MAX_VALUE)
+        {
+            System.out.print("The minimum number of coins required to get the " +
+                    "desired change is " + coins);
+        }
+    }
+}
+```
+
+Given a set of coins with different combinations, find the minimum number of coins needed to make a specific amount
