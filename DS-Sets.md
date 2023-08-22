@@ -1008,3 +1008,11 @@ public class SpellChecker {
 }
 
 ```
+
+### Q2: Search a given key in BST
+
+
+Real world usecase: E-Commerce Inventory Management
+
+Scenario: Imagine you are developing an inventory management system for an online e-commerce platform. The platform sells a wide range of products, and efficient inventory tracking is crucial to ensure accurate product availability and timely order fulfillment. 
+
