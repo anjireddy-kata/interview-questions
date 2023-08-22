@@ -830,4 +830,109 @@ private static <T> boolean checkForDuplicates(T... array)
     return false;
 }
 
+# SET 7
+### Q13: Find total ways to reach the n’th stair from the bottom
+Given a staircase, find the total number of ways to reach the n'th stair from the bottom of the stair when a person can only climb either 1 or 2 or 3 stairs at a time.
+
+Total ways to reach the 3rd stair are 4
+ 
+1 step + 1 step + 1 step
+1 step + 2 steps
+2 steps + 1 step
+3 steps
+
+ ```
+class Main
+{
+    // Recursive function to find total ways to reach the n'th stair from the bottom
+    // when a person is allowed to climb either 1 or 2 or 3 stairs at a time
+    public static int totalWays(int n)
+    {
+        // base case
+        if (n < 0) {
+            return 0;
+        }
+ 
+        // base case: there is one way to cover it with no steps
+        if (n == 0) {
+            return 1;
+        }
+ 
+        // combine results of taking 1 step or 2 steps or 3 steps at a time
+        return totalWays(n - 1) + totalWays(n - 2) + totalWays(n - 3);
+    }
+ 
+    public static void main(String[] args)
+    {
+        int n = 4;
+        System.out.printf("Total ways to reach the %d'th stair are %d",
+                            n, totalWays(n));
+    }
+}
+
+
+```
+### Q 14:  Find all  triplets with zero sum
+nput: arr[] = {0, -1, 2, -3, 1}
+Output: (0 -1 1), (2 -3 1)
+Explanation: The triplets with zero sum are 0 + -1 + 1 = 0 and 2 + -3 + 1 = 0  
+```
+/ Java  program to find triplets in a given
+// array whose sum is zero
+import java.io.*;
+import java.util.Arrays;
+ 
+class GFG {
+    // function to print triplets with 0 sum
+    static void findTriplets(int arr[], int n)
+    {
+        boolean found = false;
+ 
+        // sort array elements
+        Arrays.sort(arr);
+ 
+        for (int i = 0; i < n - 1; i++) {
+            // initialize left and right
+            int l = i + 1;
+            int r = n - 1;
+            int x = arr[i];
+            while (l < r) {
+                if (x + arr[l] + arr[r] == 0) {
+                    // print elements if it's sum is zero
+                    System.out.print(x + " ");
+                    System.out.print(arr[l] + " ");
+                    System.out.println(arr[r] + " ");
+ 
+                    l++;
+                    r--;
+                    found = true;
+                }
+ 
+                // If sum of three elements is less
+                // than zero then increment in left
+                else if (x + arr[l] + arr[r] < 0)
+                    l++;
+ 
+                // if sum is greater than zero then
+                // decrement in right side
+                else
+                    r--;
+            }
+        }
+ 
+        if (found == false)
+            System.out.println(" No Triplet Found");
+    }
+ 
+    // Driven source
+    public static void main(String[] args)
+    {
+ 
+        int arr[] = { 0, -1, 2, -3, 1 };
+        int n = arr.length;
+        findTriplets(arr, n);
+    }
+    // This code is contributed by Tushil..
+}
+```
 Given a set of coins with different combinations, find the minimum number of coins needed to make a specific amount
