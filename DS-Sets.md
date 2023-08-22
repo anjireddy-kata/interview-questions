@@ -936,3 +936,75 @@ class GFG {
 }
 ```
 Given a set of coins with different combinations, find the minimum number of coins needed to make a specific amount
+
+
+
+### Question: Implement a hash table using an array
+
+Real world usecase: Spell-Checker Application
+
+
+Imagine you are developing a spell-checker application that can suggest correct spellings for words as users type. To efficiently store a dictionary of words and their corresponding suggestions, you can implement a hash table using an array.
+```
+import java.util.ArrayList;
+import java.util.LinkedList;
+
+class HashTable {
+    private final int tableSize;
+    private final LinkedList<String>[] hashArray;
+
+    @SuppressWarnings("unchecked")
+    public HashTable(int size) {
+        tableSize = size;
+        hashArray = new LinkedList[tableSize];
+        for (int i = 0; i < tableSize; i++) {
+            hashArray[i] = new LinkedList<>();
+        }
+    }
+
+    private int hashFunction(String word) {
+        int hashValue = 0;
+        for (char c : word.toCharArray()) {
+            hashValue = (hashValue * 31 + c) % tableSize;
+        }
+        return hashValue;
+    }
+
+    public void insertWord(String word) {
+        int index = hashFunction(word);
+        hashArray[index].add(word);
+    }
+
+    public ArrayList<String> getSuggestions(String word) {
+        int index = hashFunction(word);
+        return new ArrayList<>(hashArray[index]);
+    }
+}
+
+public class SpellChecker {
+    public static void main(String[] args) {
+        HashTable dictionary = new HashTable(1000);
+
+        // Populate dictionary
+        dictionary.insertWord("receive");
+        dictionary.insertWord("received");
+        dictionary.insertWord("receiver");
+        dictionary.insertWord("hello");
+        dictionary.insertWord("world");
+
+        // User input
+        String inputWord = "recieve";
+
+        ArrayList<String> suggestions = dictionary.getSuggestions(inputWord);
+        if (suggestions.isEmpty()) {
+            System.out.println("No suggestions found.");
+        } else {
+            System.out.println("Suggestions for '" + inputWord + "':");
+            for (String suggestion : suggestions) {
+                System.out.println(suggestion);
+            }
+        }
+    }
+}
+
+```
