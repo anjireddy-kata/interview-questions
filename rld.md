@@ -107,3 +107,25 @@ if __name__ == "__main__":
 # Q15: Decision Trees: Utilized to build credit scoring models that assess the creditworthiness of applicants based on various factors.
 
 # Q16: Linked Lists: Employed to maintain a chronological record of account transactions and generate account statements.
+
+# Q17: I have one million items in an array. I would like to do the range searches. What data structure would be best fit here.
+For range searches on a large dataset with one million items, you'll want a data structure that allows efficient querying of items falling within a specified range. One suitable data structure for this purpose is an Interval Tree or a Segment Tree. These structures are particularly well-suited for range queries and can significantly speed up range search operations.
+
+Interval Tree:
+
+An Interval Tree is a data structure specifically designed for storing and querying intervals (ranges).
+Each node in the tree represents an interval, and the tree is constructed in such a way that it efficiently handles queries for overlapping intervals.
+Range searches, such as finding all intervals that overlap with a given range, can be performed in O(log n + k) time, where n is the number of intervals and k is the number of intervals in the result set.
+Segment Tree:
+
+A Segment Tree is a versatile data structure that can be used for various types of range queries, including minimum, maximum, sum, and more.
+While it's not designed exclusively for interval queries, it can be adapted to handle them efficiently.
+Range queries can be performed in O(log n) time.
+When choosing between an Interval Tree and a Segment Tree, consider the specific requirements of your application:
+
+If your primary concern is efficiently handling range queries on intervals, an Interval Tree is a dedicated structure for this purpose.
+If you anticipate needing to perform other types of range queries (e.g., finding the minimum or maximum value within a range), a Segment Tree offers more flexibility.
+Keep in mind that building and maintaining these trees can have some overhead in terms of memory and preprocessing time, especially when dealing with a large dataset like one million items. However, the efficiency gains during range searches often outweigh these costs.
+
+Additionally, if your range queries are static (i.e., the dataset doesn't change frequently), you might consider constructing a tree once and then querying it multiple times, which can amortize the initial construction cost over multiple queries.
+
