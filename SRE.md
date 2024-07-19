@@ -47,5 +47,55 @@ Follow-up: What processes do you have in place to manage and mitigate security r
 
 ### Post-Mortem Analysis:
 
-Scenario: After resolving a major incident, how would you conduct a post-mortem analysis? 
+Scenario: How would you conduct a post-mortem analysis after resolving a major incident? 
 What steps would you take to ensure that the root cause is identified and similar issues are prevented in the future?
+
+## Resiliency and Fault Tolerance
+### Service Failure Handling:
+
+Scenario: One of your microservices fails unexpectedly. How do you ensure that the failure does not cascade and affect other services in the system?
+Follow-up: What specific patterns or tools do you use to achieve this?
+
+### Circuit Breaker Implementation:
+
+Scenario: You notice that one of your dependent services is intermittently failing, causing slowdowns and timeouts in your system. How would you implement a circuit breaker pattern to handle this?
+Follow-up: How do you determine the thresholds for opening and closing the circuit?
+### Graceful Degradation:
+
+Scenario: A critical third-party API that your service relies on is experiencing issues. How would you design your service to degrade gracefully in such a situation?
+Follow-up: Can you give an example of a feature that could be degraded while maintaining overall service functionality?
+
+### Health Checks and Monitoring:
+
+Scenario: You need to ensure that all your microservices are running smoothly and are healthy. How would you set up health checks and monitoring for this?
+Follow-up: What metrics and tools would you prioritize for effective monitoring?
+
+### Load Balancing:
+
+Scenario: Your microservices are experiencing uneven load distribution, causing some instances to be overloaded while others are underutilized. How would you address this issue?
+Follow-up: What load-balancing strategies and technologies do you recommend?
+
+### State Management:
+
+Scenario: You have a stateful microservice that needs to maintain user session data. How do you ensure reliability and fault tolerance for state management in this service?
+Follow-up: What approaches or tools would you use to manage state in a distributed environment?
+
+### Data Consistency:
+
+Scenario: Your microservices need to maintain data consistency across different services and databases. How would you handle eventual consistency and ensure data reliability?
+Follow-up: How do you deal with data conflicts and ensure data integrity?
+
+### Service Discovery:
+
+Scenario: You are managing a large number of microservices that need to communicate with each other. How would you implement a reliable and fault-tolerant service discovery mechanism?
+Follow-up: What tools or frameworks have you used for service discovery?
+
+### Redundancy and Failover:
+
+Scenario: One of your microservices runs on a single instance and you need to ensure high availability. How would you implement redundancy and failover mechanisms for this service?
+Follow-up: What considerations do you take into account when designing failover strategies?
+
+### Chaos Engineering:
+
+Scenario: To test the reliability and fault tolerance of your microservices, you decide to implement chaos engineering practices. How would you design and execute chaos experiments?
+Follow-up: How do you measure the impact of these experiments and ensure they do not cause significant disruptions?
